@@ -1,0 +1,42 @@
+mobile/
+server/
+theme-angular-example/
+!.gitkeep
+
+# NPM Modules
+node_modules
+
+# BOWER Modules
+bower_components
+
+# Log Files
+logs
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# Generated Files.
+*.ser
+*~
+*.bak
+*.off
+*.old
+
+# Building
+target
+build
+null
+tmp*
+dist
+test-output
+.tmp
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea
+
+
+

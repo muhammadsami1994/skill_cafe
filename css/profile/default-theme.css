@@ -1,0 +1,450 @@
+@media screen {
+    #default-profile-view{
+        font: 13px 'Open Sans', Arial, sans-serif;
+        line-height: 21px;
+    }
+    #default-profile-view > .default-theme-wrap{
+        margin-top: 5%;
+        background-color: #fff;
+    }
+
+    #default-profile-view > .default-theme-wrap > #header{
+        min-height: 250px;
+    }
+    #default-profile-view > .default-theme-wrap > #header .row.cv-section{
+        border-top: 10px solid #fdb020;
+        text-align: center;
+    }
+    #default-profile-view > .default-theme-wrap > #header .row.cv-section>div{
+        margin-top: 25px;
+    }
+
+    #default-profile-view > .default-theme-wrap > #header .row.cv-section .candidate-intro{
+        text-align: left;
+        margin-top: 5%;
+        margin-left: 2%;
+
+    }
+    .profile-img{
+        border: 1px solid #dadada;
+        padding: 5px !important;
+    }
+    .profile-social-links{
+        margin-bottom: 20px;
+    }
+    .social-icon{
+        background-color: #252525;
+        color: #fff;
+        width: 35px;
+        text-align: center;
+        display: inline-block;
+        margin: 1px;
+    }
+    .social-icon:hover{
+        background-color: cornflowerblue;
+        color: #ffffff;
+    }
+    .social-icon i{
+        font-size: 16px;
+        vertical-align: sub;
+        margin: 8px auto;
+    }
+    .social-icon i:hover{
+        color: #ffffff;
+    }
+    .contact-info{
+        margin-top: 5px;
+    }
+    .contact-info > p{
+        margin-bottom: 2px;
+        text-align: left;
+    }
+    #default-profile-view h1{
+        font-size: 48px;
+        margin: 10px 0;
+    }
+    #default-profile-view h3{
+        font-size: 24px;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-weight: 300;
+        margin-bottom: 8px;
+    }
+    h1.candidate-name,h3.candidate-expertise{
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-weight: 300;
+    }
+
+
+    #default-profile-view > .default-theme-wrap > #content{
+        min-height: 300px;
+        border-top: 1px solid #dadada;
+    }
+    #default-profile-view > .default-theme-wrap > #content > .profile-content-item{
+        border-bottom: 1px solid #dadada;
+        padding: 60px 0 !important;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item{
+        margin: 20px 0;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item ul{
+        display: inline-block;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item ul li{
+        color: #fdb020;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item ul li span{
+        color:#000000;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item .employment-date{
+        background-color: #b1b1b1;
+        padding: 12px 20px;
+        text-align: center;
+        color:#ffffff;
+        -webkit-transition: background-color 0.5s;
+        -moz-transition:    background-color 0.5s;
+        -ms-transition:     background-color 0.5s;
+        -o-transition:      background-color 0.5s;
+        transition:         background-color 0.5s;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item .employment-date:hover{
+        background-color: #fdb020;
+
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item .employment-date span{
+
+    }
+    #default-profile-view > .default-theme-wrap > #content h2{
+        color: #b1b1b1;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-weight: 300;
+        font-size: 25px;
+    }
+    #default-profile-view > .default-theme-wrap > #content .pie-chart-description{
+        margin-left: 220px;
+        margin-top: 45px;
+    }
+    .border-bottom{
+        border-bottom: 1px solid #dadada;
+    }
+
+    #default-profile-view > .default-theme-wrap > #footer{
+
+    }
+    #print-my-cv{
+        background-color: #fdb020;
+        position: fixed;
+        right: 30px;
+        display: block;
+        width: 50px;
+        height: 50px;
+        bottom:30px;
+        text-align: center;
+    }
+    #print-my-cv:hover{
+        opacity: 0.5;
+    }
+    #print-my-cv>i{
+        color: #fff;
+        font-size: 24px;
+        line-height: 50px;
+    }
+    .change-default-color-theme{
+        margin-left: 30px;
+        /*margin-top: 30%;*/
+        padding: 29px;
+        padding-bottom:80px;
+        position: fixed;
+        bottom:0;
+        z-index: 100;
+        -webkit-transition: margin-left 0.5s;
+        -moz-transition: margin-left 0.5s;
+        -ms-transition: margin-left 0.5s;
+        -o-transition: margin-left 0.5s;
+        transition: margin-left 0.5s;
+
+    }
+    .change-default-color-theme > i{
+
+    }
+    .change-default-color-theme > .color-scheme{
+        -webkit-transition: margin-left 0.5s;
+        -moz-transition: margin-left 0.5s;
+        -ms-transition: margin-left 0.5s;
+        -o-transition: margin-left 0.5s;
+        transition: margin-left 0.5s;
+        background-color: white;
+        padding: 20px 0;
+    }
+    .change-default-color-theme > .color-scheme >span > a{
+        margin-left: 10px;
+    }
+    .change-default-color-theme span{
+        border-bottom: 1px solid #dadada;
+        border-top: 1px solid #dadada;
+        padding:5px 0;
+        text-align: center;
+    }
+    .profile-skin-color{
+        width:30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline-block;
+    }
+    .skin-toggle-button{
+        /*margin-top: 75%;*/
+        position:fixed;
+        bottom: 30px;
+        left: 40px;
+        display: block;
+        width: 50px;
+        height: 50px;
+
+        text-align: center;
+    }
+    .theme-skin-selector{
+        margin-left: -400px;
+        -webkit-transition: margin-left 0.5s;
+        -moz-transition: margin-left 0.5s;
+        -ms-transition: margin-left 0.5s;
+        -o-transition: margin-left 0.5s;
+        transition: margin-left 0.5s;
+    }
+    .edit-profile-btn{
+        color: white;
+        position: fixed;
+        right: 3%;
+        top: 35%;
+    }
+    /*--*/
+    .profile-technical-skills{
+        margin: 25px 0;
+
+    }
+    /*--*/
+}
+@media print {
+    .pie-chart{
+        display: block !important;
+    }
+    
+    #default-profile-view{
+        font: 13px 'Open Sans', Arial, sans-serif;
+        line-height: 21px;
+    }
+    #default-profile-view > .default-theme-wrap{
+        margin-top: 5%;
+        background-color: #fff;
+    }
+
+    #default-profile-view > .default-theme-wrap > #header{
+
+    }
+    #default-profile-view > .default-theme-wrap > #header .row.cv-section{
+        border-top: 10px solid #fdb020;
+        margin-left: 2%;
+        margin-bottom: 20px;
+    }
+    #default-profile-view > .default-theme-wrap > #header .row.cv-section>div{
+        display: inline-block;
+    }
+
+    #default-profile-view > .default-theme-wrap > #header .row.cv-section .profile-img{
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 5%;
+    }
+
+    #default-profile-view > .default-theme-wrap > #header .row.cv-section .candidate-intro{
+        display: inline-block;
+        margin-top: 45px;
+    }
+    #default-profile-view > .default-theme-wrap > #header .row.cv-section .candidate-intro h1 {
+        font-size: 25px;
+        font-weight: 500;
+        display: inline-block;
+        text-transform: capitalize;
+    }
+    #default-profile-view > .default-theme-wrap > #header .row.cv-section .candidate-intro h3{
+        font-size: 20px;
+    }
+    .profile-img{
+        border: 1px solid #dadada;
+        padding: 5px !important;
+    }
+    .profile-social-links{
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    .social-icon{
+        border: thin solid #252525;
+        color: #fefefe;
+        width: 35px;
+        text-align: center;
+        display: inline-block;
+        margin: 1px;
+        box-shadow: inset 0 0 0 1000px #252525 !important;
+
+    }
+    .social-icon i{
+        font-size: 16px;
+        vertical-align: sub;
+        margin: 8px auto;
+        color:#fff !important;
+    }
+
+    .contact-info{
+        margin-top: 5px;
+        text-align: center;
+    }
+    .contact-info > p{
+        margin-bottom: 2px;
+        text-align: center;
+
+    }
+    #default-profile-view h1{
+        font-size: 48px;
+        margin: 10px 0;
+    }
+    #default-profile-view h3{
+        font-size: 24px;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-weight: 300;
+        margin-bottom: 8px;
+    }
+    h1.candidate-name,h3.candidate-expertise{
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-weight: 300;
+    }
+
+
+    #default-profile-view > .default-theme-wrap > #content{
+        min-height: 300px;
+        border-top: 1px solid #dadada;
+    }
+    #default-profile-view > .default-theme-wrap > #content > .profile-content-item{
+        border-bottom: 1px solid #dadada;
+        padding: 20px 0 !important;
+
+        margin-left: 10px;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item{
+        margin: 20px 0;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item ul{
+        display: inline-block;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item ul li{
+        color: #fdb020;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item ul li span{
+        color:#000000;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item .employment-date{
+        box-shadow: inset 0 0 0 1000px #b1b1b1 !important;
+        background-color: #b1b1b1;
+        padding: 12px 20px;
+        text-align: center;
+        color:#ffffff !important;
+        -webkit-transition: background-color 0.5s;
+        -moz-transition:    background-color 0.5s;
+        -ms-transition:     background-color 0.5s;
+        -o-transition:      background-color 0.5s;
+        transition:         background-color 0.5s;
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item .employment-date:hover{
+        background-color: #fdb020;
+
+    }
+    #default-profile-view > .default-theme-wrap > #content  .work-expirence-item .employment-date span{
+        color:#ffffff !important;
+        font-size: 9px;
+    }
+    .pie-chart{
+        margin-top: 2px;
+    }
+    #default-profile-view > .default-theme-wrap > #content h2{
+        color: #b1b1b1 !important;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-weight: 300;
+        font-size: 25px;
+        text-align: center;
+    }
+    #default-profile-view > .default-theme-wrap > #content .pie-chart-description{
+        margin-left: 220px;
+        margin-top: 45px;
+    }
+    .border-bottom{
+        border-bottom: 1px solid #dadada;
+    }
+
+    #default-profile-view > .default-theme-wrap > #footer{
+
+    }
+    #print-my-cv{
+        display: none
+    }
+    
+    .change-default-color-theme{
+        display: none;
+    }
+    .profile-skin-color{
+        width:30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline-block;
+    }
+    .skin-toggle-button{
+        margin-top: 75%;
+    }
+    .theme-skin-selector{
+        margin-left: -400px;
+        -webkit-transition: margin-left 0.5s;
+        -moz-transition: margin-left 0.5s;
+        -ms-transition: margin-left 0.5s;
+        -o-transition: margin-left 0.5s;
+        transition: margin-left 0.5s;
+    }
+    .edit-profile-btn{
+        color: white;
+        position: fixed;
+        right: 3%;
+        top: 35%;
+    }
+    .easyPieChart{
+        width:20px;
+        margin-left: 0px;
+    }
+    canvas{
+        width: 120px;
+        margin: 12px;
+    }
+    /*--*/
+    .pie-chart{
+        margin-left: 0;
+    }
+    .profile-technical-skills{
+        margin: 5px 0;
+    }
+    .profile-technical-skills-item > div{
+        margin-left: 0;
+    }
+    .extra-technical-skills > div{
+
+    }
+    #default-profile-view #content{
+        margin-left: 0;
+    }
+    .skills-button {
+        color: #f4934c !important;
+        padding:3px 3px;
+        background-color: #f4f4f4;
+        margin: 3px 3px;
+        border-radius: 4px;
+        border-color: #cecece;
+        box-shadow: inset 0 0 0 1000px #f4f4f4 !important;
+    }
+    /*--*/
+}
+* { -webkit-print-color-adjust: exact; }

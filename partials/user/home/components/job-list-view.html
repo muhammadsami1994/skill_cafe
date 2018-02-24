@@ -1,0 +1,18 @@
+<div class="row margin-top-160-for-768"
+    ng-controller="jobListController as vm">
+    <div>
+        <!--margin-left-32-->
+        <div
+            class="col-md-3 col-xs-11 col-sm-11
+            col-md-offset-0 
+            scroll skill-background overflow-y-scroll overflow-x-hidden height-636 top-things-container">
+            
+            <div ng-include="vm.topSkillsAndTitles"></div>
+        </div>
+        <!--margin-left-0dot-5percent-->
+        <div class="col-md-8 col-sm-11 col-xs-11 margin-left-1dot-5percent padding-right-0">
+            <div class="row" ng-include="templateView.jobsCountAndCountry"></div>
+            <div ng-include="vm.activeJobView"></div>
+        </div>
+    </div>
+</div>

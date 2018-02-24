@@ -1,0 +1,15 @@
+<div class="add-field-button filter filter-by-skill" off-click="isCollapsed = true">
+    <button class=" btn btn-success text-center" ng-click="isCollapsed = !isCollapsed">
+        {{searchInfo.name}}
+        <span ng-if="didNotSelectSkill">{{searchInfo.defaultValue}}</span>
+        <i class="fa fa-times filter-close " ng-click="closeFilter(searchInfo)"></i>
+    </button>
+    <div collapse="isCollapsed" class="add-field-items col-lg-3">
+        <div class="well-lg btn-success skill-list">
+            <div class="col-lg-6 visible-lg-inline" ng-repeat="skill in searchInfo.list">
+                <input type="checkbox" ng-click="checkAndPush(skill)" />{{skill.name}}
+            </div>
+            <input type="text" class="skill-filter-input" ng-model="newSkill" ng-enter="addNewSkills(searchInfo.list)"/>
+        </div>
+    </div>
+</div>

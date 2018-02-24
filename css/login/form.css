@@ -1,0 +1,64 @@
+
+/*
+.site-form h2, .site-form h3 {
+	font-size: large;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	line-height: 1.7;
+	font-weight: 600;
+}
+*/
+
+.site-form input {
+
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+
+	width: 100%;
+	padding: 10px;
+    /*margin-top: 30px;*/
+
+	border-radius: 5px;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 1px;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+}
+
+.site-form input:focus {
+	border-color: rgb(101, 169, 239);
+}
+.site-form button.btn.btn-lg.btn-primary {
+	margin-top: 30px;
+}
+.site-form .link {
+	display: inline;
+	font-weight: 900;
+	padding-top: 30px;
+    padding-left: 20px;
+}
+.site-form .link > a {
+	display: inline;
+
+	background-color: transparent;
+	color: rgb(51, 51, 51);
+
+	border: 0;
+	outline: 0;
+}

@@ -1,0 +1,27 @@
+<div class="info-box-white">
+    <div class="col-lg-11">
+        <div class="card-title">
+            <a href="" class="thumb-sm m-r">
+                 <img src="img/a5.jpg" class="r r-2x">
+            </a>
+
+            <h4 class="card-text">{{candidate.workingAt}}</h4>
+        </div>
+        <hr/>
+        <div class="card-location">
+            <i class="fa fa-map-marker"></i>
+            <h5>{{candidate.location}}</h5>
+        </div>
+        <div class="card-skills">
+            <span ng-repeat="button in candidate.Buttons" >
+                <button class="btn btn-default">
+                    <i class="fa fa-circle " style="color: orange"></i>&nbsp &nbsp{{button}}</button>
+            </span>
+        </div>
+    </div>
+    <div class="col-lg-1">
+        <i class="fa fa-chevron-right arrow pull-right"></i>
+    </div>
+</div>
+<div>
+</div>

@@ -1,0 +1,55 @@
+<!-- Update New Code -->
+<div>
+    <div ng-switch on="searchInfo.type">
+        <div
+            ng-switch-when='filter-location'
+            class="
+            bg-white
+            margin-right-3
+            padding-10 padding-left-5percent">
+            <i class="fa fa-map-marker"></i>
+            <div class="inline-block width-88 padding-left-1percent">
+                <input
+                placeholder="Location"
+                ng-model="searchInfo.inputValue"
+                info="searchInfo"
+                class="location-filter-input no-border bg-transparent"
+                googleplace1
+                ng-keypress="watchErrorMessage(searchInfo.inputValue)"/>
+            </div>
+            
+            <i class="fa fa-times filter-cross-button" 
+            ng-if="hideComparision.isShow"
+            ng-click="hideComparision.letHide()"></i>
+        </div>
+
+        <div
+            ng-switch-when='filter-title'
+            class="
+            bg-white
+            margin-right-3
+            padding-10 padding-left-5percent">
+            <i class="fa fa-user"></i>
+            <div class="inline-block width-80 padding-left-1percent">
+                <input
+                type="text"
+                class="location-filter-input no-border bg-transparent"
+                ng-model="searchInfo.inputValue"
+                placeholder="Job Title"
+                typeahead="title for title in searchInfo.callback(searchInfo)"
+                typeahead-loading="loadingLocations"
+                class="form-control"
+                ng-keypress="watchErrorMessage(searchInfo.inputValue)"
+                autofocus>
+            </div>
+            
+            
+        </div>
+
+        <div ng-switch-default>
+            Default:
+            <input type="text" class="location-filter-input" placeholder="{{searchInfo.placeHolder}}" ng-model="searchInfo.inputValue" ng-enter="isCollapsed = true"/>
+        </div>
+    </div>
+    
+</div>

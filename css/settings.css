@@ -1,0 +1,28 @@
+.setting-panel{
+
+}
+.setting-panel .title{
+    vertical-align: -webkit-baseline-middle;
+}
+.setting-panel .title > i{
+    margin-right: 10px;
+}
+.setting-panel-location-input{
+    width: 100%;
+    margin: 0;
+}
+.salary-slider{
+    display: inline-block;
+    float: right;
+    margin-top: 5px;
+}
+.setting-tab{
+    max-height: 860px;
+    overflow: auto;
+
+}
+.setting-select{
+    border: none;
+    box-shadow: none;
+    width: 150px;
+}

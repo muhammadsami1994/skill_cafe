@@ -1,0 +1,53 @@
+<div class="panel panel-default b-a">
+    <!--<div class="panel-heading b-b b-light">-->
+        <!--<h1 class="visible-lg-inline-block">-->
+            <!--Top cities to work-->
+        <!--</h1>-->
+        <!--&lt;!&ndash;<input type="text" class="form-control input-lg"  placeholder="Gainesville, FL">&ndash;&gt;-->
+    <!--</div>-->
+
+    <div class="panel-body">
+        <div class="row">
+
+            <div class="col-sm-8 trending">
+
+                <!--<div class="row">-->
+                    <!--<div class="col-lg-6" ng-show="user.skills.length>0">-->
+                        <!--<select ng-change="refreshJobsNearBy('userskill')" ng-model="data.jobs.nearby.user_skills" ng-options="skill.name for skill in user.skills">-->
+                        <!--</select>-->
+                     <!--</div>-->
+                    <div class="col-lg-8">
+                        <span> <h4>Enter a Skill to see top Markets</h4></span>
+                        <div class="input-group">
+                            <input type="text" class="form-control input-lg" placeholder="Type Any Skill" ng-model="data.jobs.world.skills_filter">
+                            <span class="input-group-btn">
+                                <button class="btn btn-lg btn-orange" type="button" ng-click="refreshJobsWorld('')"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                <!--</div>-->
+                
+                <!-- <datamap map="map"></datamap> -->
+                <usa-data-map 
+                    state-click="getTopCities"></usa-data-map>
+            </div>
+            <div class="col-sm-4 trending" ng-show="data.jobs.world.data.length>0">
+                <span><h3>Top Markets </h3></span>
+                    <div ui-jq-deleted="slimScroll" ui-options="{height:'424px', size:'8px'}">
+                    <ul class="list-group list-group-lg m-b-none">
+                        <li  ng-repeat='job in data.jobs.world.data | limitTo:5' class="list-group-item" ng-click="searchByCity(job)">
+                            <span class="pull-right label bg-primary inline m-t-sm">{{job.count}}</span>
+                            <a href>{{job.city}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="m-t-xl m-b clearfix">
+            <i class="i i-local i-2x text-info pull-left m-r m-l m-t-xs"></i>
+            <div class="clear text-sm">
+                Click on a state to see Top Markets in the state.
+            </div>
+        </div>
+    </div>
+</div>

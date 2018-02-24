@@ -1,0 +1,42 @@
+<div class="resume-box animated slide-in-bottom col-lg-12">
+    <i class="title-icon text-primary flaticon-joystick4"></i>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="text"
+                   placeholder="Type your Hobby or Interest..."
+                   class="wizard-input  wizard-input-search"
+                   ng-model="data.hobby_i_have"
+                   ng-enter="addHobby(hobby_i_have)"
+                   ng-options="hobby for hobby in data.hobbies"
+                   bs-typeahead/>
+        </div>
+        <div class="col-lg-6">
+            <select name="account" class="form-control margin-top-20" ng-model="data.hobby_i_have">
+                <option value="" selected disabled> -- Recommended --</option>
+                <option  value="{{hobby}}" ng-repeat="hobby in data.common_hobbies track by $index" >
+                    {{hobby}}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-12">
+            <button class="btn btn-primary btn-addon btn-sm  margin-top-20"
+                    type="button"
+                    ng-click="addHobby(data.hobby_i_have, user.hobbies); data.hobby_i_have=''"
+                    >
+                <i class="fa fa-plus-circle"> </i> Add Hobby
+            </button>
+        </div>
+
+        <div class="col-lg-12 skill-list panel">
+            <!-- List group -->
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="hobby in user.hobbies track by $index">
+                    <span>{{hobby.name}}</span>
+                    <i class="fa fa-trash-o float-right" ng-click="deleteSkill($index, user.hobbies, 'hobbies')"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

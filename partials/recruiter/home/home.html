@@ -1,0 +1,232 @@
+<div class="recruiter-home-page home-page container-fluid no-padding">
+
+    <!----------------------------- Top-Nav Header---------------------------->
+    <div ng-include src=" '/partials/recruiter/home/navbar.html' "></div>
+
+    <!----------------------Header Filter--------------------->
+
+    <div class="filter-header recruiter-home"  id="search-skill" >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <h1 class="page-title center">Hire <span class="special">Skill & Culture Fit</span> Talent</h1>
+
+                    <br/>
+                    <h4 class="text-center">Our website will be up in a few days, until then here is a peek.</h4>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center filter-button">
+                    <!--<button class="btn btn-orange"><b>Location </b>Gainsvilla USA</button>
+                    <button class="btn btn-orange"><b>Job Title </b>Web Developer</button>
+                    <button class="btn btn-orange"><b>Skill </b>HTML</button>
+                    <button class="btn btn-orange"><b>Add Skill </b>Any</button>-->
+                <!-- <span ng-repeat="customFilter in data.homePageFilter.list">
+                    <filter-location class="orange-filter" info='customFilter' ng-if="customFilter.active"></filter-location>
+                </span>
+                <filter-skills class="orange-filter" info="data.homePageFilter.skill" list-array="data.filterSkillOutput.simple" is-collapsed="data.isCollapsedSkill" ng-if="data.homePageFilter.skill.active"></filter-skills>
+                <filter-skills class="orange-filter" info="data.homePageFilter.addSkill" list-array="data.filterSkillOutput.addSkill" is-collapsed="data.isCollapsedSkill" ng-if="data.homePageFilter.addSkill.active"></filter-skills>
+                -->
+                <span ng-repeat="customFilter in data.homePageFilter.list">
+                <filter-location class="orange-filter" info='customFilter' ng-if="customFilter.active"></filter-location>
+                </span>
+                <filter-skills class="orange-filter" info="data.homePageFilter.skill" list-array="data.filterSkillOutput.simple" is-collapsed="data.isCollapsedSkill" ng-if="data.homePageFilter.skill.active"></filter-skills>
+                <filter-skills class="orange-filter" info="data.homePageFilter.addSkill" list-array="data.filterSkillOutput.addSkill" is-collapsed="data.isCollapsedSkill" ng-if="data.homePageFilter.addSkill.active"></filter-skills>
+                <filter-boolean status="data.homePageFilter.isHighProfile" ng-if="data.homePageFilter.isHighProfile.active"></filter-boolean>
+                <filter-status status="data.homePageFilter.status" ng-if="data.homePageFilter.status.active"></filter-status>
+                <div class="add-field-button" off-click="data.isCollapsedAddFields = true">
+                    <button class=" btn btn-success" ng-click="data.isCollapsedAddFields = !data.isCollapsedAddFields">
+                        Add Fields
+                        <i class="fa fa-plus"></i>
+                    </button>
+                    <div collapse="data.isCollapsedAddFields" class="add-field-items ">
+                        <div>
+
+                            <div class="add-field-item" ng-click="addFilters(data.homePageFilter.skill)">
+                                <span>{{data.homePageFilter.skill.name}}</span><br/>
+                            </div>
+                            <div class="add-field-item" ng-click="addFilters(data.homePageFilter.addSkill)">
+                                <span>{{data.homePageFilter.addSkill.name}}</span><br/>
+                            </div>
+                            <div class="add-field-item" ng-click="addFilters(data.homePageFilter.isHighProfile)">
+                                <span>{{data.homePageFilter.isHighProfile.name}}</span><br/>
+                            </div>
+                            <div class="add-field-item" ng-click="addFilters(data.homePageFilter.status)">
+                                <span>{{data.homePageFilter.status.name}}</span><br/>
+                            </div>
+                            <!--For Rest of the Links-->
+                            <div ng-repeat="field in data.homePageFilter.list" class="add-field-item" ng-click="addFilters(field)">
+                                <span>{{field.name}}</span><br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!----------------------Header Filter--------------------->
+
+    <div class="row cafe-recruiter no-margin">
+        <div class="container-fluid">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <br/><br/>
+                <h1 class="text-center">SkillCafe is <span class="special">Open</span> for Beta Signup, Absolutely <span class="special">Free!</span></h1>
+                <br/><h3>No Credit Card Required</h3>
+                <div class="lg-login-btn col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <button class="btn btn-orange btn-lg " ui-sref="recruiter.signUp">Signup</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--Bottom Down Portion-->
+
+    <div class="row  dark-slogan ">
+        <div class="container-fluid">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="list-unstyled">
+                    <li><h2 class="text-center">
+                        &nbsp;&nbsp;<span class="special">Soft Skills </span> will make or break your career!
+                    </h2>
+                        <h4 class="float-right"><a href="http://www.peggyklaus.com/books/the-hard-truth-about-soft-skills" target="_blank">-Peggy Claus</a></h4>
+                    </li>
+                    <li><h4 class="text-center">Now hire candidates based on their Soft Skills</h4></li>
+        <br/>
+
+        </ul>
+    </div>
+</div>
+</div>
+
+<!----------------------Map Portion----------------------->
+<div class="row map-portion" style="margin-top:0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding trending-skills">
+
+            <!----------------------------Right Map----------------------->
+            <div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding map">
+                <img src="./img/world-map.png" class="col-md-12 col-sm-12" alt=""/>
+            </div>
+
+            <!----------------------------Left Hints----------------------->
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 text-center no-padding">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 home-left-search trending">
+                    <h2 class="visible-lg-inline-block visible-md-inline-block visible-sm-inline-block visible-xs-inline-block no-margin page-title">Talent Available in</h2>
+                    <input class="" type="text" class="bigtext" value="Gainesville, FL"/>
+                </div>
+
+                <!-----------------------TABS----------------------------->
+                <div class="col-lg-12">
+                    <tabset class="col-lg-10 col-lg-offset-1 text-left horizontal-tab" justified="true">
+                        <tab heading="Talent Available With Skills">
+                            <div class="col-lg-12 horizontal-list">
+                                <ol class="horizontal-list-item">
+                                    <li>
+                                        1<span>Python</span>
+                                        <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                    </li>
+                                    <li>
+                                        2<span>Java Programming</span>
+                                        <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                    </li>
+                                    <li>
+                                        3<span>Web Desiging</span>
+                                        <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                    </li>
+                                    <li>
+                                        4<span>Android Development</span>
+                                        <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                    </li>
+                                    <li>
+                                        5<span>Datamining</span>
+                                        <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                    </li>
+                                </ol>
+                            </div>
+                            <button class="btn btn-lg col-lg-12 col-md-12 col-sm-12 col-xs-12 tabs-view-more-btn"> View All Talent </button>
+                        </tab>
+
+                    </tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------------Map Portion----------------------->
+
+    <div class="row products">
+        <div class="light-vertical-tabs tabs-left col-lg-12 cafe-recruiter">
+            <br/><br/>
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <ul class="list-unstyled">
+                            <li>
+                                <h2 class="text-center">
+                                    &nbsp;&nbsp;<span class="special">Discover </span> top talent ranked based on Hard Skills and Soft Skills
+                                </h2>
+                                <br/>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="nav nav-tabs col-lg-3 no-border no-padding">
+                <li ng-class="getTabClass(1)" ng-click="setActiveTab(1)" class="feature col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <a data-toggle="tab" class="no-border">Deal</a>
+                </li>
+                <li ng-class="getTabClass(2)" ng-click="setActiveTab(2)" class=" feature col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <a data-toggle="tab" class="no-border">Bond</a>
+                </li>
+                <li ng-class="getTabClass(3)" ng-click="setActiveTab(3)" class=" feature col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <a data-toggle="tab" class="no-border">Collateral</a>
+                </li>
+                <li ng-class="getTabClass(4)" ng-click="setActiveTab(4)" class="feature col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <a data-toggle="tab" class="no-border">Rating</a>
+                </li>
+            </ul>
+            <div class="tab-content col-lg-9 no-padding ">
+                <div ng-class="getTabPaneClass(1)" id="deal">
+                    <img src="./img/devices.png" alt=""/>
+                    <p>
+                        Tab 1
+                    </p>
+                </div>
+
+                <div ng-class="getTabPaneClass(2)" id="bond">
+                    <img src="./img/devices.png" alt=""/>
+                    <p>
+                        Tab 2
+                    </p>
+                </div>
+
+                <div ng-class="getTabPaneClass(3)" id="collateral">
+                    <img src="./img/devices.png" alt=""/>
+                    <p>
+                        Tab 3
+                    </p>
+                </div>
+
+                <div ng-class="getTabPaneClass(4)" id="rating">
+                    <img src="./img/devices.png" alt=""/>
+                    <p>
+                        Tab 4
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!----------------------Footer --------------------------->
+    <div ng-include src=" 'partials/footer.html' ">
+
+    </div>
+    <!----------------------Footer --------------------------->
+
+</div>

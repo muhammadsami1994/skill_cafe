@@ -1,0 +1,78 @@
+<div class="vbox">
+    <div class="row-row gray-bg  bg-white-only b-l bg-auto bg-auto-right no-border-xs">
+        <div class="wrapper b-b b-light col-lg-12">
+            <div class=" ">
+                <a ui-sref="user-panel.dashboard"> <i class="fa  fa-anchor text-muted text-sm m-r-xs"></i> Dashboard</a>
+            </div>
+        </div>
+        <div class="wrapper b-b b-light col-lg-12" >
+            <div class=" ">
+                <a ui-sref="user-panel.dashboard.skill"> <i class="fa  fa-cogs text-muted text-sm m-r-xs"></i> Skills & Settings</a>
+            </div>
+        </div>
+        <div class="b-b b-light col-lg-12">
+            <tabset class="nav-tabs-alt" justified="true">
+            <tab>
+                <tab-heading>
+                    <i class="glyphicon glyphicon-comment text-md text-muted wrapper-sm"> </i>
+                </tab-heading>
+                <div class="wrapper-md">
+                    <ul class="list-group no-borders pull-in auto">
+                        <li class="list-group-item">
+                            <p class="text-muted">Recruiters online <span class="badge pull-right">0</span></p>
+                        </li>
+                        <li class="list-group-item">
+
+                            <span class="pull-left thumb-sm avatar  m-r">
+                                <img src="img/person-avatar.png" alt="..." class="img-circle">
+                                <i class="away b-white bottom"></i>
+                            </span>
+                            <a href class="text-muted" ui-toggle-class="show" target=".app-aside-right"><i class="fa fa-comment-o pull-right m-t-sm text-sm"></i></a>
+                            <div class="clear">
+                                <div><a href="">SkillCafe Help</a></div>
+                                <small class="text-muted">offline</small>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </tab>
+        </tabset>
+        </div>
+        <div class="wrapper b-b b-light col-lg-12">
+            <div class="">
+                <h3>Finish your profile</h3>
+            </div>
+            <p>By connecting your social accounts we can fetch your network and filter recruiters connected to you.</p>
+            <div class="col-lg-12 ">
+                    <button class=" btn btn-sm  btn-twitter social-button" ng-click="linkedinLogin()">
+                        <i class="fa fa-twitter"></i> Twitter
+                    </button>
+                    <button class="btn btn-sm btn-facebook social-button">
+                        <i class="fa fa-facebook"></i> Facebook
+                    </button>
+                    <button class="btn btn-sm btn-github social-button  ">
+                        <i class="fa fa-github"></i> Github
+                    </button>
+                    <button class="btn btn-sm btn-linkedin social-button">
+                        <i class="fa fa-linkedin"> </i> Linked in
+                    </button>
+            </div>
+        </div>
+        <div class="wrapper b-b b-light col-lg-12">
+                <div class="">
+                    <h3 class="">Invite</h3>
+
+                </div>
+                <div class="col-lg-12 no-margin no-padding">
+                    <p class="small text-muted no-margin">Spread the good word about SkillCafe</p>
+                    <div class="input-group ">
+                        <input class="form-control" type="email" placeholder="john@example.com">
+                        <div class="email-button input-group-addon ">INVITE</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

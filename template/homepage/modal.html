@@ -1,0 +1,192 @@
+    <div id="findSkillsetModal" class="modal" role="dialog" ng-controller="modalCtrl">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <!--skillset-->
+                    <h4 class="font-color-white" ng-if="modalType == 'skillset'">Select a job title</h4>
+                    <p class="font-color-white font-weight-100" ng-if="modalType == 'skillset'">Select a job title in which you are interested in and find out what skills are in the highest demand for that title</p>
+
+                    <!--location-->
+                    <h4 class="font-color-white" ng-if="modalType == 'location'">Select your skils</h4>
+                    <p class="font-color-white font-weight-100" ng-if="modalType == 'location'">Select your skills and find out where you will most likely be able to find a job</p>
+                </div>
+                <div
+                        class="no-padding"
+                        ng-controller="modalFilterController as vm">
+                    <div class="row">
+                        <div ng-if="modalType == 'skillset'">
+                            <filter-location
+                                    ng-class="{'modalFilterJobTitle':$index == 1}"
+                                    class="orange-filter
+                                    wizard-input
+                                    display-inherit
+                                    no-padding
+                                    margin-left-13percent
+                                    width-75
+                                    margin-bottom-5"
+                                    info='customFilter'
+                                    is-collapsed="customFilter.isCollapsed"
+                                    next-index="$index"
+                                    call-go="refreshHotSkills"
+                                    ng-repeat="customFilter in vm.filters.list">
+                            </filter-location>
+                        </div>
+                        <div ng-if="modalType == 'location'">
+                            <filter-skills
+                                    class="
+                                    modalSkills
+                                    orange-filter
+                                    wizard-input
+                                    display-inherit
+                                    no-padding
+                                    margin-left-13percent
+                                    width-75
+                                    margin-bottom-5"
+                                    info="vm.filters.skill"
+                                    is-collapsed="true">
+                            </filter-skills>
+                            <!-- Selected Skills -->
+                            <!-- Add Filter Icons -->
+                            <!-- First Skill list drop down -->
+                            <div
+                                    class="
+                                    margin-top-minus-2
+                                    margin-left-13percent
+                                    width-75
+                                    hidden-sm hidden-xs no-padding">
+                                <ul
+                                        class="list-unstyled no-padding skill-active-list">
+                                    <li
+                                            ng-repeat="skill in vm.filters.skill.callback_results"
+                                            ng-if="skill.active">
+                                        <p class="no-margin inline-block">{{skill.name}}</p>
+                                        <i class="glyphicon glyphicon-remove pull-right margin-right-15" ng-click="vm.filters.skill.callback_results[$index].active=false"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <filter-location
+                                    class="orange-filter
+                                    modalFilterJobTitle
+                                    wizard-input
+                                    display-inherit
+                                    no-padding
+                                    margin-left-13percent
+                                    width-75
+                                    margin-bottom-5"
+                                    info='customFilter'
+                                    is-collapsed="customFilter.isCollapsed"
+                                    next-index="$index"
+                                    ng-if="$index == 1"
+                                    call-go="refreshHotSkills"
+                                    ng-repeat="customFilter in vm.filters.list">
+                            </filter-location>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--skillset-->
+                        <button
+                                ng-if="modalType == 'skillset'"
+                                class="btn search-btn
+                                 margin-left-13percent
+                                 width-75
+                                 margin-bottom-10
+                                 margin-top-5percent
+                                 font-size-1em
+                                 height-2dot5em
+                                 padding-top-4
+                                 padding-bottom-3
+                                 padding-left-0"
+                                type="button"
+                                ng-click="ok();vm.searchJob()">
+                            <i class="glyphicon glyphicon-wrench"></i>&nbsp; Find Skillset
+                        </button>
+
+                        <!--location-->
+                        <!--ng-click="vm.searchJob()">-->
+                        <button
+                                ng-if="modalType == 'location'"
+                                class="btn search-btn
+                                 margin-left-13percent
+                                 width-75
+                                 margin-bottom-10
+                                 margin-top-5percent"
+                                type="button"
+                                ng-click="ok()">
+                            <i class="fa fa-map-marker font-size-medium"></i>&nbsp; Find Location
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--
+<script type="text/ng-template" id="findLocation.html">
+    <div id="findLocationModal" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                </div>
+                <div
+                        class="no-padding"
+                        ng-controller="defaultFilterController as vm">
+                    <div class="row">
+                        <filter-location
+                                class="orange-filter wizard-input display-inherit no-padding
+                                col-lg-10
+                                col-lg-offset-1 margin-bottom-1"
+                                info='customFilter'
+                                is-collapsed="customFilter.isCollapsed"
+                                next-index="$index"
+                                call-go="refreshHotSkills"
+                                ng-repeat="customFilter in vm.filters.list">
+                        </filter-location>
+                    </div>
+                    <div class="row">
+
+                    </div>
+                    &lt;!&ndash; Selected Skills &ndash;&gt;
+                    &lt;!&ndash; Add Filter Icons &ndash;&gt;
+                    &lt;!&ndash; First Skill list drop down &ndash;&gt;
+                    <div
+                            class="
+                            col-lg-3 col-md-3
+                            col-lg-offset-5 col-md-offset-7
+                            hidden-sm hidden-xs no-padding">
+                        <ul
+                                class="list-unstyled no-padding skill-active-list">
+                            <li
+                                    ng-repeat="skill in vm.filters.skill.callback_results"
+                                    ng-if="skill.active">
+                                <p class="no-margin inline-block">{{skill.name}}</p>
+                                <i
+                                        class="glyphicon glyphicon-remove pull-right margin-right-15"
+                                        ng-click="vm.filters.skill.callback_results[$index].active=false"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+-->
+
+<!--modal demo-->
+    <!--<div class="modal-header">
+                    <h3 class="modal-title">I'm a modal!</h3>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li ng-repeat="item in items">
+                            <a ng-click="selected.item = item">{{ item }}</a>
+                        </li>
+                    </ul>
+                    Selected: <b>{{ selected.item }}</b>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="ok()">OK</button>
+                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                </div>-->

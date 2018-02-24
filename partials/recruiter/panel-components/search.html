@@ -1,0 +1,69 @@
+<div class="row recruiter-dashboard">
+    <!-- Left side Panel-->
+    <nav class="col-lg-3 side-bar gray-bg">
+
+        <!--Here left Side Panel Directive Use-->
+    <div class="side-fixed col-lg-3">
+        <side-nested-nav links-array="getRecruiterSideLinks"></side-nested-nav>
+    </div>
+    </nav>
+    <div class="col-lg-9 right-panel">
+
+        <!--Top Buttons-->
+        <div class="top-bar">
+
+            <span id="filter-box">
+                <!--All filters HTML here-->
+                    <filter-skills info="dashBoardFilter.skill" list-array="data.filterSkillOutput.simple" is-collapsed="isCollapsedSkill" ng-if="dashBoardFilter.skill.active"></filter-skills>
+                    <filter-skills info="dashBoardFilter.hasSkill" list-array="data.filterSkillOutput.hasSkill" is-collapsed="data.isCollapsedSkill" ng-if="dashBoardFilter.hasSkill.active"></filter-skills>
+                    <span ng-repeat="customFilter in dashBoardFilter.list">
+                        <filter-location info='customFilter' ng-if="customFilter.active && customFilter.name!='Skill'"></filter-location>
+                    </span>
+                <!--All filters HTML here-->
+            </span>
+            <div class="add-field-button" off-click="isCollapsedAddFields = true">
+                <button class=" btn btn-success" ng-click="isCollapsedAddFields = !isCollapsedAddFields">
+                    ADD FIELD
+                    <i class="fa fa-plus"></i>
+                </button>
+                <div collapse="isCollapsedAddFields" class="add-field-items">
+                    <div>
+
+                        <div ng-if="!dashBoardFilter.skill.active" class="add-field-item" ng-click="addFilters(dashBoardFilter.skill)">
+                            <span>{{dashBoardFilter.skill.name}}</span><br/>
+                        </div>
+                        <div ng-if="!dashBoardFilter.hasSkill.active" class="add-field-item" ng-click="addFilters(dashBoardFilter.hasSkill)">
+                            <span>{{dashBoardFilter.hasSkill.name}}</span><br/>
+                        </div>
+
+                        <!-- Rest Of the filter Field List-->
+                        <div ng-repeat="field in dashBoardFilter.list" ng-if="!field.active" class="add-field-item" ng-click="addFilters(field)">
+                            <span>{{field.name}}</span><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="btn navbar-right">
+                <!--<i class="fa fa-chevron-down"></i>-->
+                <div class="btn-group assigned" dropdown is-open="assigned.isopen">
+                    <button type="button" class="btn dropdown-toggle " ng-disabled="disabled">
+                        <i class="fa fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="title"><i class="fa fa-check"></i>Assigned</li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                    </ul>
+                </div>
+            </span>
+        </div>
+        <div>
+            <div class="members" ng-repeat="member in members |filter:filterBySkillOutput">
+                <member-info info="member"></member-info>
+                <hr/>
+            </div>
+        </div>
+    </div>
+</div>

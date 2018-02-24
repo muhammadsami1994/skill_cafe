@@ -1,0 +1,25 @@
+a:hover, a > *:hover, a:focus, a > *:focus,
+.text-primary,
+.me-nav > li > a:hover > i,
+.contact-icon,
+ul.social-icons li a:hover i {
+	color: #f4934c;
+}
+
+.me-nav > li > a:after,
+.owl-page.active,
+.btn-orange,
+.contact-form-trigger,
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus,
+.label-primiary,
+.progress-bar-primary,
+.sb-primary .skill-rate-on,
+.te-primary:before,
+.me-logo {
+	background-color: #f4934c;
+}
+
+.btn-orange:hover,
+.btn-orange:focus{
+	background-color: #e67929;
+}

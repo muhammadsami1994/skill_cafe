@@ -1,0 +1,69 @@
+<div class="panel panel-default b-a">
+    <div class="panel-heading b-b b-light">
+        <h1 class="visible-lg-inline-block">
+            Top cities to work, in the country
+        </h1>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>For My Skills</h3>
+            </div>
+
+            <div class="col-sm-8 trending">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <select ng-change="refreshJobsWorld('userskill')" ng-model="data.jobs.world.user_skills" ng-options="skill.name for skill in user.skills">
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-lg" placeholder="Type Any Skill" ng-model="data.jobs.world.skills_filter">
+                            <span class="input-group-btn">
+                                <button class="btn btn-lg btn-orange" type="button" ng-click="refreshJobsWorld('txtskill')"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div style="height:240px; margin-top:60px;" ng-if="data.jobs.world.world_marks.length>0" ui-jq="vectorMap" ui-options="{
+                            map: 'world_mill_en',
+                            markers: {{data.jobs.world.world_marks}},
+                            normalizeFunction: 'polynomial',
+                            backgroundColor: '#fff',
+                            regionStyle: {
+                              initial: {
+                                fill: '{{app.color.light}}'
+                              },
+                             hover: {
+                                fill: '{{app.color.primary}}'
+                              },
+                            },
+                            markerStyle: {
+                              initial: {
+                                fill: '{{app.color.info}}',
+                                stroke: '#fff'
+                              }
+                            }
+                          }" >
+                </div>
+            </div>
+            <div class="col-sm-4 trending" ng-show="data.jobs.world.data.length>0">
+                    <div panel-body ui-jq-deleted="slimScroll" ui-options="{height:'424px', size:'8px'}">
+                    <ul class="list-group list-group-lg m-b-none">
+                        <li  ng-repeat='job in data.jobs.world.data' class="list-group-item" ng-click="searchByCity(job)">
+                            <span class="pull-right label bg-primary inline m-t-sm">{{job.count}}</span>
+                            <a href>{{job.city}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-t-xl m-b clearfix">
+            <i class="i i-local i-2x text-info pull-left m-r m-l m-t-xs"></i>
+            <div class="clear text-sm">
+                This map is based on demand of your skills in various places around the world.
+            </div>
+        </div>
+    </div>
+</div>

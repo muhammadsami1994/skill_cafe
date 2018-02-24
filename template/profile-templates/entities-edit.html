@@ -1,0 +1,11 @@
+<div class="text-center text-danger">
+    {{strError}}
+</div>
+<div ng-show=" obj.key == 'jobtitle' || obj.key == 'jobspec' || obj.key == 'jobdesc' || obj.key == 'requirement' ">
+    <textarea ng-model="value" class="form-control"></textarea>
+</div>
+<div ng-show=" obj.key == 'image' || obj.key == 'video'">
+    <input type="text" ng-model="value" class="form-control"/>
+</div>
+<input type="button" class="btn btn-success" value="Update" ng-click="fnConfirmEdit()"/>
+<input type="button" class="btn btn-danger" value="Cancel" ng-click="fnCancelEdit()"/>

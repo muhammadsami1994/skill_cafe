@@ -1,0 +1,29 @@
+<div
+    
+    class="
+    col-lg-12
+    no-padding">
+    <div
+        class="col-lg-12">
+        <h2
+        class="col-lg-10 margin-top-25 inline-block">
+        Jobs <span ng-if="vm.activeLocation"> in {{vm.activeLocation}}</span>
+        
+        <span ng-if="vm.activeSalary">and {{vm.activeSalary}}</span>
+        ({{vm.queryResults.numberOfJobs}})
+        </h2>
+        <div class="home-search-toggle-icon hidden-sm hidden-xs">
+            <i
+            class="fa fa-list"
+            ng-class="{'active':vm.activeJobView==vm.jobViewTypes.listView}"
+            ng-click="vm.changeJobViewStyle(vm.jobViewTypes.listView)"
+            ></i>
+            <i
+            class="fa fa-map"
+            ng-class="{'active':vm.activeJobView==vm.jobViewTypes.mapView}"
+            ng-click="vm.changeJobViewStyle(vm.jobViewTypes.mapView)"
+            ></i>
+            
+        </div>
+    </div>
+</div>

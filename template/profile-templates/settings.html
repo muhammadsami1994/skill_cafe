@@ -1,0 +1,193 @@
+<div class="setting-tab col-lg-12">
+    <!--Exception Settings-->
+    <div class="panel panel-default setting-panel col-lg-12 no-padding">
+        <div class="panel-heading font-bold">
+            Locations
+        </div>
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline title">
+                <div class="input-group">
+                    <input type="text"
+                           class="form-control input-lg ng-pristine ng-valid"
+                           ng-model="data.location"
+                           placeholder="Location"
+                           googleplace1
+                           ng-blur="save('lastquery')">
+                    <span class="input-group-btn">
+                        <button class="btn btn-lg btn-orange" type="button" ng-click="refreshJobsNearBy()"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default setting-panel">
+        <div class="panel-heading font-bold">
+            Salary
+        </div>
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline title">
+                <i class="fa fa-file-text-o"></i>
+                <span>My Salary is negotiable</span>
+            </div>
+            <div class="visible-lg-inline visible-md-inline visible-md-inline visible-xs-inline float-right">
+                <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+                    <input type="checkbox"
+                           ng-model="user.preferences.salary.negotiable"
+                           ng-change="save('preferences.salary.negotiable')">
+                    <i></i>
+                </label>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline title">
+                <i class="fa fa-file-text-o"></i>
+                <span>Minimum Salary Expectation: {{settings.salary.minimumSalaryExpectation}}</span>
+            </div>
+            <div class="salary-slider">
+                <div class="slider slider-horizontal">
+                    <div class="slider-track">
+                        <div class="slider-selection" style="left: 0%; width: 35%;"></div>
+                        <div class="slider-handle min-slider-handle round" style="left: 35%;" tabindex="0"></div>
+                        <div class="slider-handle max-slider-handle round hide" tabindex="0" style="left: 0%;"></div>
+                    </div>
+                    <div id="tooltip" class="tooltip top" style="top: -30px; left: 35%; margin-left: -11px;">
+                        <div class="tooltip-arrow"></div>
+                        <div class="tooltip-inner">7</div>
+                    </div>
+                    <div id="tooltip_min" class="tooltip top" style="top: -30px;">
+                        <div class="tooltip-arrow"></div>
+                        <div class="tooltip-inner"></div>
+                    </div>
+                    <div id="tooltip_max" class="tooltip bottom" style="top: 18px;">
+                        <div class="tooltip-arrow"></div>
+                        <div class="tooltip-inner"></div>
+                    </div>
+                    <input id="range" ui-jq="slider"
+                           ui-options="{min: 0,max: 50000,step: 1000,value:user.preferences.salary.min}"
+                           class="slider slider-horizontal form-control"
+                           type="text" style="display: none;"
+                           ng-model="user.preferences.salary.min"
+                           ng-change="save('preferences.salary.min')"/>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default setting-panel">
+        <div class="panel-heading font-bold">
+            Others
+        </div>
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline title">
+                <i class="fa fa-file-text-o"></i>
+                <span>Job Type</span>
+            </div>
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline float-right">
+                <select name="account"
+                        class="form-control m-b setting-select"
+                        ng-model="user.preferences.job_types_value"
+                        ng-options="option.value as option.text for option in preferences.job_types"
+                        ng-change="save('preferences.job_types_value')">
+                </select>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline title">
+                <i class="fa fa-file-text-o"></i>
+                <span>Company Size</span>
+            </div>
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline float-right">
+                <select class="form-control m-b setting-select"
+                        ng-model="user.preferences.company.selected"
+                        ng-options="option.value as option.text for option in preferences.company.options"
+                        ng-change="save('preferences.company')">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default setting-panel">
+        <div class="panel-heading font-bold">
+            Do not Disturb
+        </div>
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-md-inline visible-xs-inline title">
+                <i class="fa fa-comment-o"></i>
+                <span> {{preferences.privacy.allow_chat.text}}</span>
+            </div>
+            <div class="visible-lg-inline visible-md-inline visible-md-inline visible-xs-inline float-right">
+                <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+                    <input type="checkbox"
+                           ng-model="user.preferences.privacy.allow_chat.checked"
+                           ng-change="save('preferences.privacy.allow_chat')">
+                    <i></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default setting-panel">
+        <div class="panel-heading font-bold">
+            Share The Following With Recruiters:
+        </div>
+
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline title">
+                <i class="fa fa-envelope-o"></i>
+                <span>{{user.preferences.privacy.allow_emails.text}}</span>
+            </div>
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline float-right">
+                <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+                    <input type="checkbox"
+                           ng-model="user.preferences.privacy.allow_emails.checked"
+                           ng-change="save('preferences.privacy.allow_emails')">
+                    <i></i>
+                </label>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline title">
+                <i class="fa fa-phone"></i>
+                <span>{{user.preferences.privacy.phone_share.text}}</span>
+            </div>
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline float-right">
+                <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+                    <input type="checkbox"
+                           ng-model="user.preferences.privacy.phone_share.checked"
+                           ng-change="save('preferences.privacy.phone_share')">
+                    <i></i>
+                </label>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline title">
+                <i class="fa fa-user"></i>
+                <span>{{preferences.privacy.share_profile.text}}</span>
+            </div>
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline float-right">
+                <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+                    <input type="checkbox"
+                           ng-model="user.preferences.privacy.share_profile.checked"
+                           ng-change="save('preferences.privacy.share_profile')">
+                    <i></i>
+                </label>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline title">
+                <i class="fa fa-file-text-o"></i>
+                <span>{{preferences.privacy.allow_share_results.text}}</span>
+            </div>
+            <div class="visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline float-right">
+                <label class="i-switch i-switch-lg bg-dark m-t-xs m-r">
+                    <input type="checkbox"
+                           ng-model="user.preferences.privacy.allow_share_results.checked"
+                           ng-change="save('preferences.privacy.allow_share_results')">
+                    <i></i>
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>

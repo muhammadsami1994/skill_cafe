@@ -1,0 +1,152 @@
+/* 
+
+*/
+.i-switch {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 20px;
+  border-radius: 30px;
+  background-color: #27c24c;
+  margin: 0;
+}
+.i-switch input {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.i-switch input:checked + i:before {
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  right: 5px;
+  border-width: 0;
+  border-radius: 5px;
+}
+.i-switch input:checked + i:after {
+  margin-left: 16px;
+}
+.i-switch i:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 30px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.i-switch i:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 18px;
+  top: 1px;
+  bottom: 1px;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-transition: margin-left 0.3s;
+  transition: margin-left 0.3s;
+}
+.i-switch-md {
+  width: 40px;
+  height: 24px;
+}
+.i-switch-md input:checked + i:after {
+  margin-left: 17px;
+}
+.i-switch-md i:after {
+  width: 22px;
+}
+.i-switch-lg {
+  width: 50px;
+  height: 30px;
+}
+.i-switch-lg input:checked + i:after {
+  margin-left: 21px;
+}
+.i-switch-lg i:after {
+  width: 28px;
+}
+.i-checks {
+  padding-left: 20px;
+  cursor: pointer;
+}
+.i-checks input {
+  opacity: 0;
+  position: absolute;
+  margin-left: -20px;
+}
+.i-checks input:checked + i {
+  border-color: #23b7e5;
+}
+.i-checks input:checked + i:before {
+  left: 4px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  background-color: #23b7e5;
+}
+.i-checks input:checked + span .active {
+  display: inherit;
+}
+.i-checks input[type="radio"] + i,
+.i-checks input[type="radio"] + i:before {
+  border-radius: 50%;
+}
+.i-checks input[disabled] + i,
+fieldset[disabled] .i-checks input + i {
+  border-color: #dee5e7;
+}
+.i-checks input[disabled] + i:before,
+fieldset[disabled] .i-checks input + i:before {
+  background-color: #dee5e7;
+}
+.i-checks > i {
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  border: 1px solid #cfdadd;
+  background-color: #fff;
+  margin-left: -20px;
+  margin-top: -2px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+  position: relative;
+}
+.i-checks > i:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.i-checks > span {
+  margin-left: -20px;
+}
+.i-checks > span .active {
+  display: none;
+}
+.datepicker {
+  margin: 0 5px;
+}
+.datepicker .btn-default {
+  border-width: 0;
+  box-shadow: none;
+}
+.datepicker .btn[disabled] {
+  opacity: 0.4;
+}
+.datepicker .btn-info .text-info {
+  color: #fff !important;
+}

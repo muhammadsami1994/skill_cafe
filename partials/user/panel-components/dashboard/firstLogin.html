@@ -1,0 +1,151 @@
+<div class="wrapper-md wizard-first-login">
+    <tabset class="tab-container">
+
+        <tab heading="1. Welcome" active="steps.step0" select="steps.percent=10">
+            <div class="content padded-short">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <progressbar value="steps.percent" class="progress-xs m-t" type="success"></progressbar>
+                    </div>
+                    <div class="col-lg-4">
+                        <form name="step1" class="form-validation">
+                            <div class="m-b ">
+                                <button type="submit" ng-disabled="step1.$invalid" class="btn btn-success btn-rounded no-margin" ng-click="steps.step1=true">Next</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <!-- Box - About Me -->
+                        <div class="resume-box  animated slide-in-top margin-right-20" id="welcome-left-height-copy">
+                            <i class="title-icon text-primary flaticon-speech43"></i>
+                            <div class="pull-right">
+                                <img ng-src="{{user.pic}}" class="img-circle" alt="..." style="min-height:120px" ng-if="user.pic">
+                                <img ng-src="img/person-avatar.png"  class="img-circle" alt="..." ng-if="!user.pic">
+                            </div>
+                            <h3>Who am I?</h3>
+
+                            <div class="h4">
+                                <input class="wizard-input" type="text" placeholder="Your Name" ng-model="user.name" ng-blur="save('name')">
+                            </div>
+
+                            <textarea rows="6" class="wizard-input text-muted font-thin" type="text" ng-model="user.summary" placeholder="Quick Summary/ About me" ng-blur="save('summary')"
+                                      ng-model-options="{ updateOn: 'blur' }"
+                                      ng-keyup="cancel($event)" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 ">
+                        <!-- Box - Specialities -->
+                        <div class="resume-box animated slide-in-right" css-equal-height="welcome-left-height-copy">
+                            <i class="title-icon text-primary flaticon-mouse19"></i>
+                            <h3>My Current Role</h3>
+                            <!-- Speciality -->
+                            <div class="speciality">
+                                <i class="speciality-icon text-muted flaticon-bulb11"></i>
+                                <div class="speciality-content">
+                                    <h5 class="short">
+                                        <input type="text"  ng-model="user.currentjob" typeahead="title for title in titleAutoComplete()" typeahead-loading="loadingLocations"
+                                               class="form-control  wizard-input-search"
+                                               placeholder="Current/Past Job" ng-blur="save('currentjob')"
+                                               ng-model-options="{ updateOn: 'blur' }"
+                                               ng-keyup="cancel($event)" >
+                                    </h5>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+
+        <tab heading="2. My Skills" active="steps.step1" select="steps.percent=30">
+
+            <div class="content padded-short">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <progressbar value="steps.percent" class="progress-xs m-t" type="success"></progressbar>
+                    </div>
+                    <div class="col-lg-4">
+                        <form name="step1" class="form-validation">
+                            <div class="m-b ">
+                                <button type="submit" ng-disabled="step1.$invalid" class="btn btn-success btn-rounded no-margin" ng-click="steps.step2=true">Next</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Box - Skills & Attributes -->
+                        <div ng-include src=" 'template/profile-templates/hard-skills.html' "></div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <!-- Box - Skills & Attributes -->
+                        <div ng-include src=" 'template/profile-templates/soft-skills.html' "></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </tab>
+
+        <tab heading="3. Languages & Interests (optional)" active="steps.step2" select="steps.percent=80">
+
+            <div class="content padded-short">
+
+                <div class="col-lg-8">
+                    <progressbar value="steps.percent" class="progress-xs m-t" type="success"></progressbar>
+                </div>
+                <div class="col-lg-4">
+                    <form name="step1" class="form-validation">
+                        <div class=" m-b">
+
+                            <button type="submit" ng-disabled="step1.$invalid" class="btn btn-success btn-rounded no-margin" ng-click="steps.step3=true">Next</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <!-- Box - Languages -->
+                        <div ng-include src=" 'template/profile-templates/languages.html' "></div>
+
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <!-- Box - Hobbies -->
+                        <div ng-include src=" 'template/profile-templates/hobbies.html' "></div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </tab>
+        <tab heading="4. Your Profile" active="steps.step3" select="steps.percent=100">
+
+            <div class="content padded-short">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <progressbar value="steps.percent" class="progress-xs m-t" type="success"></progressbar>
+                    </div>
+                    <div class="col-lg-4">
+                        <form name="step1" class="form-validation">
+                            <div class=" m-b">
+                                <a ui-sref="user-panel.dashboard" class="btn btn-success btn-rounded">Finish</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row first-login-profile" ng-include src="'partials/user/profile/defaultView.html' " ng-controller="userProfileView">
+
+            </div>
+
+        </tab>
+    </tabset>
+</div>

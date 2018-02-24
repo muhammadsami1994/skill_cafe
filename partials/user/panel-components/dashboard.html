@@ -1,0 +1,15 @@
+<!-- hbox layout -->
+<div class="app-content-full dashboard">
+    <div class="hbox hbox-auto-xs m-n" >
+        <!-- /column -->
+        <div class="col" ui-view>
+                <div ng-include src="'/partials/user/panel-components/dashboard/default.html'"></div>
+        </div>
+
+         <!-- Left aside column -->
+        <div class="col w-lg lter b-r bg-light" ng-include src="'/partials/user/panel-components/dashboard/aside.html'" >
+            <!-- you can put whatever you want inside ui-view and that becomes the default view-->
+        </div>
+    </div>
+</div>
+<!-- /hbox layout -->

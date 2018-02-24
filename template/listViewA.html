@@ -1,0 +1,23 @@
+<div class="list-view-candidate">
+    <div class="col-lg-12 candidate">
+        <div class="col-lg-4">
+            <img src="../img/a5.jpg" alt="" class="card-img"/>
+            <h4 class="card-text">{{candidate.workingAt}}</h4>
+        </div>
+
+        <div class="col-lg-4 item">
+            <i class="fa fa-map-marker"></i>
+            <h5>{{candidate.location}}</h5>
+
+        </div>
+        <div class=" col-lg-4 item">
+            <span ng-repeat="button in candidate.Buttons" >
+                    <i class="fa fa-circle" style="color: orange"></i>&nbsp &nbsp{{button}}
+                </span>
+        </div>
+    </div>
+
+</div>
+<div>
+
+</div>

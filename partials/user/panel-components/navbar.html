@@ -1,0 +1,113 @@
+<!----------------- DashBoard Navigation----------------->
+
+<nav class="navbar navbar-default navbar-fixed-top bg-light-bar " role="navigation" ng-controller="NavBarController">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    ng-init="navCollapsed = true"
+                    ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand skill-cafe-logo" ui-sref="home">
+                <img  src="./img/logo-dark.png" alt="Logo"/>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div collapse="navCollapsed" class="collapse navbar-collapse  navbar-responsive-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+                <!--<li ng-class="{ active: isNavActive('getting-started')}" ><a class="" ui-sref=".getting-started"><i class="glyphicon  glyphicon-arrow-right text-muted"></i> Getting Started</a></li>-->
+                <!--<li ng-class="{ active: isNavActive('dashboard')}" ><a class="" ui-sref=".dashboard"><i class="fa fa-anchor text-muted"></i> Dashboard</a></li>-->
+                <li ng-class="{ active: isNavActive('search')}"><a class="" ui-sref="user-panel.search"><i class="fa fa-search text-muted"></i> Search</a></li>
+                <li ng-class="{ active: isNavActive('analytics')}">
+                    <a class="" ui-sref="user-panel.analytics.nearme">
+                        <i class="fa fa-bar-chart text-muted"></i> Analytics
+
+                    </a>
+                </li>
+                
+                
+                <!-- Skill in Demand only Show in Mobile View -->
+                <li>
+                    <a class="visible-xs-block" ng-click="collapseNavDemand_Skills()">
+                        <i class="fa fa-wrench text-muted"></i> Skills in Demand 
+                        <i 
+                            class="fa fa-plus small" 
+                            ng-if="navSkillDemandCollapse"></i>
+                        <i 
+                            class="fa fa-minus small" 
+                            ng-if="!navSkillDemandCollapse"></i>
+                    </a>
+                    <ul>
+                        <li 
+                            ng-if="data.jobs.hotskills.data.skills && !navSkillDemandCollapse"
+                            class="visible-xs-block" 
+                            ng-repeat='skill in data.jobs.hotskills.data.skills | limitTo:10 track by $index' 
+                            ng-click='refreshJobforSkill(skill.name)'>
+                            <a class="" ui-sref=".analytics">
+                                <i class="fa fa-star-o text-muted small"></i> {{skill.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="page">
+                            <a class="li-pages" href="about.html" title="About SkillCafe">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown" ng-show="user.isLoggedIn">
+                    <a href class="dropdown-toggle clear" data-toggle="dropdown">
+                        <span class="pull-left thumb-sm avatar  m-t-n-sm m-b-n-sm m-l-sm">
+                            <img ng-src="{{user.pic}}" alt="..." ng-if="user.pic">
+                            <img ng-src="img/person-avatar.png" alt="..." ng-if="!user.pic">
+                            <i class="on b-white right"></i>
+                        </span>
+                        <span class="hidden-sm hidden-md">{{user.name}}</span> <b class="caret"></b>
+                    </a>
+                    <!-- dropdown -->
+                    <ul class="dropdown-menu animated fadeInRight w">
+
+
+                        <li>
+                            <a ui-sref="user-panel.profile-view">Profile
+                                <span class="badge bg-danger pull-right">70%</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a ui-sref="user-panel.dashboard.skill">
+                                <span>Settings</span>
+                                <i class="fa fa-gears pull-right text-muted"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://skillcafe.userecho.com/" target="_blank">
+                                <span class="label bg-green pull-right">new</span>
+                                Feedback
+                            </a>
+                        </li>
+                        <li>
+                        <li>
+                            <a ui-sref="user.logout" ng-class="{ active: isNavActive('logout')}">Logout</a>
+                        </li>
+                    </ul>
+                    <!-- / dropdown -->
+                </li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>

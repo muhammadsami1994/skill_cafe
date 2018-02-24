@@ -1,0 +1,227 @@
+<div class="margin-top-80 col-lg-10 col-lg-offset-1">
+    <div class="row form-container vertical-container ">
+        <div class="col-lg-12" ng-show="!user.isLoggedIn">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <h1 class="page-title has-subtitle no-margin no-padding"> Login to <span class="site-name"> SkillCafe</span>
+                    </h1>
+
+                    <h2 class=" no-margin no-padding" style="margin-top: 0;padding-top: 0">
+                        And start finding incredible talent.
+                    </h2>
+                </div>
+            </div>
+            <div class="vertical-container">
+                <div class="row">
+                    <div class="col-lg-6 text-center" style="border-right:1px solid #d3d3d3;">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button class=" btn-lg  btn-social   btn-linkedin" ng-click="linkedinLogin()">
+                                    <i class="fa fa-linkedin"></i> Login with LinkedIn
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button class=" btn-lg  btn-social btn-facebook" ng-click="facebookLogin()"><i
+                                        class="fa fa-facebook"></i> &nbsp; &nbsp; Login using Facebook
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button class="btn-lg btn-social btn-google-plus" ng-click="googleLogin()"><i
+                                        class="fa fa-google-plus"></i>&nbsp; &nbsp; Login using Google
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <form role="form" id="form1">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div>
+                                        <input
+                                                type="email"
+                                                placeholder="Email"
+                                                name="email"
+                                                form="form1"
+                                                autofocus="autofocus"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div>
+                                        <input type="password" placeholder="Password" name="password" form="form1" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 link">
+                                    <a ui-sref="recruiter.reset" bs-tooltip1="tooltip.forgetPass">
+                                        <i class="fa fa-question-circle"></i>
+                                        Forgot my Password
+                                    </a>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="row">
+                                <div class="col-lg-8">
+
+                                    <a ui-sref="recruiter_panel.search" class="btn btn-primary">Login</a>
+                                    <span>Or</span>
+                                    <a ui-sref="recruiter.signUp" bs-tooltip1="tooltip.signUp">
+                                        sign up for an account
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+                        <!--
+                        <form role="form" id="form1">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div>
+                                        <input disabled
+                                                type="email"
+                                                placeholder="Email"
+                                                name="email"
+                                                form="form1"
+                                                autofocus="autofocus"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div>
+                                        <input disabled type="password" placeholder="Password" name="password" form="form1" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 link">
+                                    <a ui-sref="login.reset" >
+                                        <i class="fa fa-question-circle"></i>
+                                        Forgot my Password
+                                    </a>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="row">
+                                <div class="col-lg-8">
+
+                                    <button disabled type="submit" ui-sref="dashboard.main" class="btn btn-primary">Login</button>
+                                    <span>Or</span>
+                                    <a ui-sref="login.signup">
+                                        sign up for an account
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+
+                        -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="col-lg-12" ng-show="user.isLoggedIn">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <h1 class="page-title has-subtitle no-margin no-padding"> Hello, {{user.name}} </h1>
+
+                    <h2 class=" no-margin no-padding" style="margin-top: 0;padding-top: 0">
+                        Keep discovering new opportunities around you!
+                    </h2>
+                </div>
+
+            </div>
+            <div class="vertical-container">
+                <div class="row">
+                    <div class="col-lg-6 " style="border-right:1px solid #d3d3d3;">
+                        <div class="panel no-border">
+                            <div class="panel-heading wrapper b-b b-light">
+                                          <span class="text-xs text-muted pull-right">
+                                            <i class="fa fa-circle text-primary m-r-xs"></i>
+                                            <i class="fa fa-circle text-info m-r-xs m-l-sm"></i>
+                                            <i class="fa fa-circle text-warning m-r-xs m-l-sm"></i>
+                                          </span>
+                                <h4 class="font-thin m-t-none m-b-none text-muted">QuickLinks</h4>
+                            </div>
+
+                            <ul class="list-group list-group-lg m-b-none">
+
+                                <li class="list-group-item clearfix" ng-click="go('recruiter-panel.dashboard')">
+                                    <a href="" class="thumb-sm  m-r">
+                                        1.
+                                    </a>
+                                    <span class="pull-right  inline m-t-sm"><i class="fa fa-chevron-right"></i></span>
+                                    <a ui-sref="recruiter-panel.dashboard">Dashboard</a>
+                                </li>
+                                <li class="list-group-item clearfix" ng-click="go('recruiter-panel.analytics')">
+                                    <a href="" class="thumb-sm  m-r">
+                                        2.
+                                    </a>
+                                    <span class="pull-right  inline m-t-sm"><i class="fa fa-chevron-right"></i></span>
+                                    <a ui-sref="recruiter-panel.analytics">Analytics</a>
+                                </li>
+
+                                <li class="list-group-item clearfix" ng-click="go('recruiter-panel.search')">
+                                    <a href="" class="thumb-sm  m-r">
+                                        3.
+                                    </a>
+                                    <span class="pull-right  inline m-t-sm"><i class="fa fa-chevron-right"></i></span>
+                                    <a ui-sref="recruiter-panel.search">Search</a>
+                                </li>
+                                <li class="list-group-item clearfix" ng-click="go('recruiter-panel.profile')">
+                                    <a href="" class="thumb-sm  m-r">
+                                        4.
+                                    </a>
+                                    <span class="pull-right  inline m-t-sm"><i class="fa fa-chevron-right"></i></span>
+                                    <a ui-sref="recruiter-panel.profile">Profile</a>
+                                </li>
+
+                            </ul>
+                            <div class="panel-footer">
+                                <button class="btn btn-default btn-addon btn-sm" ng-click="logout()"><i class="fa fa-lock"> </i> Logout </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h3>Why use Social Accounts?</h3>
+
+                                <p>Because there are too many usernames passwords in the world.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h3>Is my password Saved?</h3>
+
+                                <p>We do not save your password. We use Industry standard OAuth, hence your password is never
+                                    saved/or even known to us.</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+

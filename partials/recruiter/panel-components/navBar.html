@@ -1,0 +1,42 @@
+<!----------------- DashBoard Navigation----------------->
+<nav class="navbar navbar-default navbar-fixed-top bg-dark-blue " role="navigation" ng-controller="NavBarController">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    ng-init="navCollapsed = true"
+                    ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand skill-cafe-logo" href="#">
+                <img  src="./img/logo-white.png" alt="Logo"/>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div collapse="navCollapsed" class="collapse navbar-collapse  navbar-responsive-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li  ng-class="{ active: isNavActive('dashboard')}" ><a class="" ui-sref=".dashboard">Dashboard</a></li>
+                <li  ng-class="{ active: isNavActive('search')}" ><a class="" ui-sref=".search">Search</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="home-nav-right-btn dropdown-toggle" data-toggle="dropdown">James Harty<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="page">
+                            <a class="li-pages" href="about.html" title="About SkillCafe">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+<div class="container-fluid dashboard">
+    <div ui-view></div>
+</div>

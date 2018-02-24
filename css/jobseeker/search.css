@@ -1,0 +1,116 @@
+.info-box{
+    background-color: #22262c;
+    margin: 20px 15px 20px 35px;
+    padding-bottom: 10px;
+    border-radius:2% ;
+    display: inline-block;
+}
+.info-box button{
+   font-family: san-serif;
+}
+.card-img {
+    width: 50px;
+}
+.card-text{
+    display:inline;
+    color: #ffffff ;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+}
+.info-box hr{
+    width:85%;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+.info-box h5{
+    display: inline;
+    color: #ffffff;
+}
+.info-box span{
+    margin-top: 20px;
+}
+.arrow{
+    color: #1e82d1;
+    margin-top: 94px;
+}
+.thumbnail-list{
+ margin-left: 75%;
+    margin-top: 3%;
+
+}
+.thumbnail-list i{
+    cursor: pointer;
+}
+.image-search{
+    width: 35px;
+}
+.card-title{
+     margin-top: 30px;
+     margin-left: 30px;
+}
+.card-location{
+    color:white;
+    text-align: center;
+}
+.card-location i{
+    font-weight: bold;
+    font-size: 20px;
+}
+.card-skills{
+    margin-top: 15px;
+    margin-left: 7%;
+    margin-bottom: 10px;
+}
+thumbnail-view-type-a{
+    display: inline-block;
+}
+.info-box-white{
+    background-color: #e9ebec;
+    margin: 20px 15px 20px 35px;
+    padding-bottom: 10px;
+    border-radius:2% ;
+    display: inline-block;
+}
+thumbnail-view-type-b{
+    display: inline-block;
+}
+thumbnail-view-type-b h4{
+    color:#2b3137 !important;
+}
+thumbnail-view-type-b .fa-map-marker{
+    color:#2b3137 !important;
+}
+thumbnail-view-type-b h5{
+    display: inline-block;
+    color:#2b3137 !important;
+}
+.job-seeker-search-right{
+    min-height: inherit;
+}
+.search-panel-left{
+    background-color: #f4f4f4;
+    padding-top: 5%;
+}
+
+.list-view-candidate h4{
+    color:#2b3137 !important;
+}
+.list-view-candidate h5{
+    color:#2b3137 !important;
+    display: inline-block;
+}
+.list-view-candidate .item{
+    padding-top: 12px;
+}
+.list-view-candidate > .candidate{
+    padding-top: 15px;
+}
+.change-view-button{
+    margin-top: 2%;
+}
+.jobTitle a {
+  color: #0065C4;
+  text-decoration: none;
+  max-width: 450px;
+  text-overflow: ellipsis;
+}

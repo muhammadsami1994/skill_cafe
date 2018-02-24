@@ -1,0 +1,126 @@
+.aside{
+
+}
+.aside-dialog{
+    margin-top: 8%;
+}
+.profile-aside-header h2,.profile-panel-top-buttons{
+    display: inline-block;
+}
+.profile-aside-header,.aside-title{
+    margin: 0 0 5% 0;
+    padding: 0;
+
+}
+.star-box{
+    text-align: center;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    font-size: 14px;
+    color:#555555;
+
+}
+.star-box div{
+    margin-top:6px;
+}
+.side-panel-select{
+    width:auto;
+    height: 40px;
+}
+.circle-btn{
+
+    width: 45px;
+    height: 45px;
+    border: 2px solid #000000 !important;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    top:0px;
+    right:0px;
+
+}
+.profile-panel-top-buttons{
+    margin-bottom: 5%;
+    margin-top:30px;
+    padding: 0 0 3% 0;
+    border-bottom: 2px double #CECECE;
+
+}
+.slide-panel-add-note{
+    padding: 0 0 5% 0;
+    border-bottom: 4px solid gray;
+}
+
+.slide-panel-projects{
+    margin-top: 4%;
+}
+.slide-panel-projects hr{
+    width: 98%;
+    margin-bottom: 3px;
+
+}
+.slide-panel-project-item{
+    font-size:14px;
+    padding: 4% 0 4%;
+    border-left: 5px solid gray;
+    margin-bottom: 2px;
+}
+.slide-panel-project-item>div{
+    padding-left: 4%;
+}
+.slide-panel-project-platform,.slide-panel-project-des{
+    font-size:10px;
+}
+
+.profile-aside-detail{
+    margin-top: 10%;
+}
+.aside-panel-profile-general{
+    font-weight: bold;
+    color:black !important;
+}
+.aside-panel-profile-general-item{
+    margin-bottom: 5%;
+}
+
+.aside-panel-profile-general-item h3{
+    margin: 3px;
+    font-size: 16px;
+    color: gray !important;
+    font-weight: normal;
+}
+.aside-panel-profile-general-item i {
+    margin:3px 3px;
+}
+.aside-panel-profile-general-item p{
+    margin: 3px;
+    font-size: 16px;
+    color: gray !important;
+    font-weight: 300;
+    margin-left: 24px;
+}
+.aside-panel-profile-general-title{
+    margin: 3px;
+    font-size: 16px;
+    color: gray !important;
+    font-weight: bold;
+}
+
+
+.side-panel-back-button{
+    color:#000000;
+    cursor: pointer;
+    /*margin: 10% 0%;*/
+    font-weight: 400;
+}
+.side-panel-back-button:hover{
+    color:indianred;
+}
+.social-sharing-container .fa{
+    margin: 14px 5px 0px 0px;
+    font-size: 20px;
+}
+

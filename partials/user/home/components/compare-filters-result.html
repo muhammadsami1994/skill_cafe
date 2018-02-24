@@ -1,0 +1,132 @@
+<div class="
+    col-lg-10
+    col-lg-offset-1
+    col-xs-10
+    col-xs-offset-1
+    no-padding"
+    ng-controller="compareFilterController as vm">
+
+
+
+    <!--  /////////////////////////////////////////////// -->
+    <!-- ////////////1st Filter Suggestion////////////// -->
+    <!--/////////////////////////////////////////////// -->
+    
+    <div
+        class="
+        col-lg-6
+        col-xs-6
+        no-padding">
+        <!-- List Of Top Skills -->
+        
+        <div ng-if="vm.filterResults.c_1.hotSkills.length>0">
+            <h2>Top 5 Skills for {{vm.filterResults.c_1.locationName}}</h2>
+            <ul class="top-list list-unstyled no-padding inline-block">
+                <li
+                    class="col-lg-12"
+                    ng-repeat="skill in vm.filterResults.c_1.hotSkills"
+                    >
+                    <!--ng-click="addSkill(skills,data.homePageFilter.skill.callback_results)">-->
+                    <p
+                        ng-class="{'active-top-skill':skill.active==true}">
+                        
+                        <span
+                        ng-click="vm.letActiveSkill('c_1',skill)">{{skill.name}}</span>
+                        <i
+                        ng-show="skill.active == true"
+                        class="glyphicon glyphicon-remove font-size-smaller"
+                        ng-click="vm.letDeactiveSkill('c_1',skill)">
+                        </i>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <!-- List Of Top Titles -->
+        <div class="margin-top-15" ng-if="vm.filterResults.c_1.hotTitles.length>0">
+            <h2>Top 5 Titles for {{vm.filterResults.c_1.locationName}}</h2>
+            <ul class="top-list list-unstyled no-padding inline-block">
+                <li
+                    class="col-lg-12"
+                    ng-repeat="hotTitle in vm.filterResults.c_1.hotTitles">
+                    <p
+                        ng-class="{'active-top-skill':vm.activeTitle.c_1==hotTitle}"
+                        >
+                        <span ng-click="vm.setTitle('c_1',hotTitle)">{{hotTitle}}</span>
+                        <i
+                        ng-show="vm.activeTitle.c_1 == hotTitle"
+                        class="glyphicon glyphicon-remove font-size-smaller"
+                        ng-click="vm.setTitle('c_1','')">
+                        </i>
+                    </p>
+                </li>
+                
+            </ul>
+        </div>
+        <div ng-if="vm.filterResults.c_1.numberOfJobs">
+            <br>
+            <p 
+            class="font-color-blue" 
+            ng-click="vm.searchJobs('c_1')">
+            Jobs in {{vm.filterResults.c_1.locationName}} ({{vm.filterResults.c_1.numberOfJobs}})
+            </p>
+        </div>
+    </div>
+    <!--  /////////////////////////////////////////////// -->
+    <!-- ////////////2nd Filter Suggestion////////////// -->
+    <!--/////////////////////////////////////////////// -->
+    <div
+        class="
+        col-lg-6
+        col-xs-6
+        no-padding">
+        <!-- List Of Top Skills -->
+        <div ng-if="vm.filterResults.c_2.hotSkills.length>0">
+            <h2>Top 5 Skills for {{vm.filterResults.c_2.locationName}}</h2>
+            <ul class="top-list list-unstyled no-padding inline-block">
+                <li
+                    class="col-lg-12"
+                    ng-repeat="skill in vm.filterResults.c_2.hotSkills"
+                    >
+                    <p
+                        ng-class="{'active-top-skill':skill.active==true}">
+                        <span
+                        ng-click="vm.letActiveSkill('c_2',skill)">{{skill.name}}</span>
+                        <i
+                        ng-show="skill.active == true"
+                        class="glyphicon glyphicon-remove font-size-smaller"
+                        ng-click="vm.letDeactiveSkill('c_2',skill)">
+                        </i>
+                    </p>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- List Of Top Titles -->
+        <div class="margin-top-15" ng-if="vm.filterResults.c_2.hotTitles.length>0">
+            <h2>Top 5 Titles for {{vm.filterResults.c_2.locationName}}</h2>
+            <ul class="top-list list-unstyled no-padding inline-block">
+                <li
+                    class="col-lg-12"
+                    
+                    ng-repeat="hotTitle in vm.filterResults.c_2.hotTitles">
+                    <p
+                        ng-class="{'active-top-skill':vm.activeTitle.c_2==hotTitle}">
+                        <span ng-click="vm.setTitle('c_2',hotTitle)">{{hotTitle}}</span>
+                        <i
+                        ng-show="vm.activeTitle.c_2 == hotTitle"
+                        class="glyphicon glyphicon-remove font-size-smaller"
+                        ng-click="vm.setTitle('c_2','')">
+                        </i>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div ng-if="vm.filterResults.c_2.numberOfJobs">
+            <br>
+            <p 
+                class="font-color-blue" 
+                ng-click="vm.searchJobs('c_2')">
+                Jobs in {{vm.filterResults.c_2.locationName}} ({{vm.filterResults.c_2.numberOfJobs}})</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,218 @@
+<div class="aside col-lg-8" tabindex="-1" role="dialog">
+<div class="aside-dialog col-lg-12">
+<div class="aside-content col-lg-12">
+<div class="profile-aside-header col-lg-12" ng-show="name">
+<!--left side-->
+<div class="col-lg-5">
+    <h2 class="aside-title" ng-bind="name"></h2>
+    <img src="./img/person-avatar.png" alt=""/>
+
+    <div class="col-lg-12 no-padding profile-aside-detail">
+        <div class="col-lg-12 no-padding">
+            <h4 class="aside-panel-profile-general">General</h4>
+        </div>
+
+        <div class="col-lg-12 no-padding aside-panel-profile-general-item">
+            <h4 class="aside-panel-profile-general-title">Company</h4>
+            {{company}}
+        </div>
+
+        <div class="col-lg-12 no-padding aside-panel-profile-general-item">
+            <h4 class="aside-panel-profile-general-title">Bio</h4>
+            {{bio}}
+        </div>
+
+        <div class="col-lg-12 no-padding aside-panel-profile-general-item">
+            <h4 class="aside-panel-profile-general-title">Skills</h4>
+            {{skill.plateform.description}}
+        </div>
+
+        <div class="col-lg-12 no-padding aside-panel-profile-general-item">
+            <h4 class="aside-panel-profile-general-title">Url</h4>
+            {{socialLinks.chain}}
+        </div>
+
+        <div class="col-lg-12 no-padding aside-panel-profile-general-item">
+            <h4 class="aside-panel-profile-general-title">Email</h4>
+            {{socialLinks.email}}
+        </div>
+
+        <div class="col-lg-12 no-padding aside-panel-profile-general-item">
+            <h4 class="aside-panel-profile-general-title">Location</h4>
+            {{socialLinks.location}}
+        </div>
+    </div>
+</div>
+
+<!-------------------right side---------------->
+<div class="col-lg-7">
+    <div class="col-lg-12 profile-panel-top-buttons">
+
+        <div class="star-box col-lg-2 no-padding">
+            <div>
+                <i class="fa fa-star"></i>
+            </div>
+        </div>
+
+        <select class="form-control col-lg-2 side-panel-select col-lg-offset-1">
+            <option disabled selected>Status</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+
+        <select class="form-control col-lg-2 side-panel-select col-lg-offset-1">
+            <option disabled selected>Assigned</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+
+        <button type="button" class="circle-btn close" ng-click="$hide()">
+            <i class="fa fa-times"></i>
+        </button>
+
+    </div>
+
+
+    <!----Add Note---->
+    <div class="col-lg-12 slide-panel-add-note">
+        <div class="input-group col-lg-12">
+            <input class="form-control" type="text" placeholder="Add a note...">
+
+            <div class="email-button input-group-addon">
+                <i class="fa fa-check-square-o"></i>
+            </div>
+        </div>
+    </div>
+    <!----Add Note---->
+
+    <!----Projects---->
+    <div class="col-lg-12 slide-panel-projects no-padding">
+        <h4>Projects</h4>
+
+        <!-------------------------------------------------------->
+        <!-- Project 1 -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform"></div>
+        </div>
+
+        <!-- Project 2 -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform">Javascript</div>
+        </div>
+
+        <!-- Project 3 -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform">Javascript</div>
+        </div>
+
+        <!-- Project 4 -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform"></div>
+        </div>
+
+        <!-- Project 5 -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform">Javascript</div>
+        </div>
+
+        <!-- Project 6 -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform">Javascript</div>
+        </div>
+
+        <!-- Project 7 -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform">Javascript</div>
+        </div>
+
+        <!-- Project 8 -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform">Javascript</div>
+        </div>
+
+        <!-- Project 9 -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform">Javascript</div>
+        </div>
+
+        <!-- Project 10  -->
+        <hr/>
+        <div class="col-lg-12 slide-panel-project-item no-padding">
+            <div class="col-lg-10">
+                <i class="fa fa-check-square-o"></i>
+                AnglingTechnologiesVideoLightBox
+                <div class="slide-panel-project-des visible-lg-inline-block"> Lightbox Video...</div>
+            </div>
+            <div class="col-lg-2 no-padding slide-panel-project-platform">Javascript</div>
+        </div>
+        <!-------------------------------------------------------->
+
+    </div>
+    <!----Projects---->
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>

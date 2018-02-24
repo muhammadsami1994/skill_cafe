@@ -1,0 +1,27 @@
+<div ng-include src=" '/partials/user/panel-components/navbar.html' "></div>
+<!-- hbox layout -->
+<div class="app-content-full">
+    <div class="hbox hbox-auto-xs m-n" >
+        <!-- /column -->
+         <!-- Left aside column -->
+        <div class="col w-lg lter b-r bg-light" ng-include src="'/partials/user/panel-components/analytics/aside.html'" >
+            <!-- you can put whatever you want inside ui-view and that becomes the default view-->
+        </div>
+
+        <div class="col">
+            <div class="vbox">
+                <div class="row-row">
+                    <div class="cell">
+                        <div class="cell-inner">
+                            <div class="wrapper" ui-view>
+                               <div ng-include src="'/partials/user/panel-components/analytics/trending.html'"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /hbox layout -->

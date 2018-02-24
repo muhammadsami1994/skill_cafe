@@ -1,0 +1,101 @@
+<div class="panel panel-default b-a">
+    <div class="panel-heading b-b b-light">
+        <h1 class="visible-lg-inline-block">
+            Find out which <strong>Skills</strong> are in demand
+        </h1>
+    </div>
+    <div class="panel-body">
+
+        <!----------------------------Right Hints----------------------->
+        <div class="no-padding trending-filters">
+            <span id="filter-box">
+                <!--All filters HTML here-->
+                <span ng-repeat="customFilter in data.homePageFilter.list">
+                    <filter-location class="orange-filter wizard-input" info='customFilter' is-collapsed="customFilter.isCollapsed" ng-if="customFilter.active"></filter-location>
+                </span>
+                <div class="add-field-button">
+                    <button class="btn  btn-success " type="button" style="min-width: 45px"  ng-if="!enableGoButton">
+                        Go
+                    </button>
+                    <button class="btn  btn-success " type="button" style="min-width: 45px" ng-click="refreshHotSkills()" ng-if="enableGoButton">
+                        Go
+                    </button>
+                </div>
+                <!--All filters HTML here-->
+            </span>
+            <!--<div class="col-lg-7 col-lg-offset-4 col-xs-12">-->
+                <!--<span ng-repeat="customFilter in data.homePageFilter.list" class="col-lg-4 col-xs-12 no-padding">-->
+                        <!--<filter-location class="orange-filter wizard-input" info='customFilter' is-collapsed="customFilter.isCollapsed" ng-if="customFilter.active"></filter-location>-->
+                <!--</span>-->
+                <!--<div class="add-field-button" style="float: left">-->
+                    <!--<button class="btn  btn-success " type="button" style="min-width: 45px"  ng-if="!enableGoButton">-->
+                        <!--Go-->
+                    <!--</button>-->
+                    <!--<button class="btn  btn-success " type="button" style="min-width: 45px" ng-click="refreshHotSkills()" ng-if="enableGoButton">-->
+                        <!--Go-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!-----------------------TABS----------------------------->
+            <!--<div class="col-lg-12 col-xs-12">-->
+                <!--<tabset class="col-lg-10 col-lg-offset-1 text-left horizontal-tab" justified="true">-->
+                    <!--<tab heading="Top Jobs for your skills">-->
+                        <!--<div class="col-lg-12 horizontal-list" ng-show="data.jobs.hotskills.data.jobs.length>0">-->
+                            <!--<ol class="horizontal-list-item">-->
+                                <!--<li ng-repeat='job in data.jobs.hotskills.data.jobs | limitTo:5 track by $index'>-->
+                                    <!--{{$index + 1}}<span> <a target="_blank" href={{job.sourceurl}}> {{job.title}} at {{job.company}}</a></span>-->
+                                    <!--<span class="float-right"> <i class="fa fa-angle-right"></i></span>-->
+                                <!--</li>-->
+                            <!--</ol>-->
+                        <!--</div>-->
+                        <!--<button class="btn btn-lg col-lg-12 col-md-12 col-sm-12 col-xs-12 tabs-view-more-btn"> View All Jobs </button>-->
+                    <!--</tab>-->
+                    <!--<tab heading="Skills in demand">-->
+                        <!--<div class="col-lg-12 horizontal-list" ng-show="data.jobs.hotskills.data.skills.length>0">-->
+                            <!--<ol class="horizontal-list-item">-->
+                                <!--<li ng-repeat='skill in data.jobs.hotskills.data.skills | limitTo:5 track by $index' >-->
+                                    <!--{{$index + 1}}<span>{{skill}}</span>-->
+                                    <!--<span class="float-right"> <i class="fa fa-angle-right"></i></span>-->
+                                <!--</li>-->
+                            <!--</ol>-->
+                        <!--</div>-->
+                        <!--<button class="btn btn-lg col-lg-12 col-md-12 col-sm-12 col-xs-12 tabs-view-more-btn"> View All Skills</button>-->
+                    <!--</tab>-->
+
+                <!--</tabset>-->
+            <!--</div>-->
+             <div class="col-lg-12 horizontal-list"  ng-show="data.jobs.hotskills.data.skills.length>0">
+                <!--<div class="col-lg-8 col-lg-offset-2 col-xs-12 col-xs-offset-0 no-padding">-->
+
+                    <div class="panel " style="background:transparent; border: none; box-shadow: none">
+                        <!--<alert type="info" close="closeAlert()" ng-show="!isLocationAvailable()" >SkillCafe is currently not available in your chosen location above.</alert>-->
+
+                        <div class="panel-body no-padding">
+
+                           <div class="list-group list-group-lg list-group-sp">
+
+                                <!--<div class="list-group-item clearfix" ng-animate=" 'animate' " ng-repeat="job in data.json.results track by $index">-->
+                                    <!--<div ng-include src=" '/template/job.html' "></div>-->
+                                <!--</div>-->
+
+                                <ol class="horizontal-list-item">
+                                    <li ng-repeat='skill in data.jobs.hotskills.data.skills | limitTo:10 track by $index' >
+                                        {{$index + 1}}<span class=""><a class="" ng-click="searchjob(skill)">{{skill.name}}</a></span>
+                                        <span class="float-right"> <a class="" ng-click="searchjob(skill)">Show Jobs</a></span>
+                                    </li>
+                                 </ol>
+                                <!--<div class="list-group-item clearfix ">-->
+                                    <!--<span class="pull-right badge bg-primary m-t-xs">{{data.jobs.match.results.total}}</span>-->
+                                    <!--<button class="btn  btn-primary btn-addon btn-sm" ng-click="seeAllJobs()">See All Skills</button>-->
+                                <!--</div>-->
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>

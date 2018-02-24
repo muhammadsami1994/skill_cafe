@@ -1,0 +1,56 @@
+<div ng-controller="FlotChartDemoCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            <h1 class="page-title page-title-small text-left">
+                Demands of my Skills, over time
+            </h1>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div ui-jq="plot" ui-options="
+              [
+                { data: {{d}}, points: { show: true, radius: 6}, splines: { show: true, tension: 0.45, lineWidth: 5, fill: 0 } }
+              ],
+              {
+                colors: ['{{app.color.info}}'],
+                series: { shadowSize: 3 },
+                xaxis:{
+                  font: { color: '#ccc' },
+                  position: 'bottom',
+                  ticks: [
+                    [ 1, 'Jan' ], [ 2, 'Feb' ], [ 3, 'Mar' ], [ 4, 'Apr' ], [ 5, 'May' ], [ 6, 'Jun' ], [ 7, 'Jul' ], [ 8, 'Aug' ], [ 9, 'Sep' ], [ 10, 'Oct' ], [ 11, 'Nov' ], [ 12, 'Dec' ]
+                  ]
+                },
+                yaxis:{ font: { color: '#ccc' } },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+                tooltip: true,
+                tooltipOpts: { content: '%x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+              }
+            " style="height:240px; margin-top:20px;" >
+                    </div>
+                </div>
+
+                <div class="col-md-6 trending">
+                    <h3>My Skills</h3>
+                    <select>
+                        <option>Python</option>
+                        <option>Django</option>
+                        <option>Web designing</option>
+                        <option>c++</option>
+                    </select>
+                        <div class="input-group">
+                          <input type="text" class="form-control input-lg" placeholder="Type Any Skill">
+                          <span class="input-group-btn">
+                            <button class="btn btn-lg btn-orange" type="button"><i class="fa fa-search"></i></button>
+                          </span>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

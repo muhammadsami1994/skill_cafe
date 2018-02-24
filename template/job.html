@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-lg-12 col-xs-12">
+        <div class="col-lg-12 jobs-item">
+            <!--<div class="date"> {{job.date}} </div>-->
+            <div class="date"> {{getJobDay(job.date)}} <span>{{getJobMonth(job.date)}}</span></div>
+
+            <!--Dummy visible xs to push to right, col-xs-offset-* do not work. -->
+            <div class="col-xs-1 visible-xs"></div>
+            <a href="{{job.url}}" target="_blank">
+            <span class="col-lg-2 col-md-2 col-sm-2 col-xs-3 thumbnail">
+
+                    <img ng-src="{{getImage(job)}}" alt="{{job.company}}">
+
+                <i class="on b-white right"></i>
+            </span>
+
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                <div class="col-lg-12 col-sm-12 col-xs-12 ">
+
+                        <h3 class="title">{{job.jobtitle}}</h3>
+
+                    <h4 class="company clear"><strong> {{job.company}}</strong></h4>
+                    <!--<small class="text-muted clear text-ellipsis">{{job.company}}</small>-->
+                </div>
+
+                <div class="col-lg-12">
+                    <!--<p class="margin-bottom-5">Required Skills:</p>-->
+                    <small class="snippet"  ng-bind-html="job.snippet"></small>
+                    <!--<ul class="list-unstyled list-inline">-->
+                        <!--<li class="skills-button" ng-repeat="skill in job._source.skills_array | limitTo:4 track by $index">-->
+                            <!--{{skill}}-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<i class="fa text-muted" ng-class="job.moreskills?'fa-minus-circle':'fa-plus-circle'"  style="font-size:18px;margin-top:10px;" ng-click="job.moreskills=!job.moreskills" ng-show="job._source.skills_array.length > 4"></i>-->
+                        <!--</li>-->
+                        <!--<li class="skills-button" ng-repeat="skill in job._source.skills_array.slice(4) track by $index" ng-show="job.moreskills">-->
+                            <!--{{skill}}-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                </div>
+
+                <div class="col-lg-3 col-sm-3 col-xs-12 ">
+                     <span class="text-md text-muted block small">
+                          <i class="glyphicon glyphicon-map-marker"></i>
+                        {{job.city}}, {{job.state}}, {{job.country}}
+                      </span>
+                    <!--<span class="text-md text-muted block small"><i class="glyphicon glyphicon-fire"></i> 1,500</span>-->
+                </div>
+                <!--<div class="col-lg-5 col-sm-5 col-xs-12 ">-->
+                      <!--&lt;!&ndash;<span class="text-md text-muted block small">&ndash;&gt;-->
+                          <!--&lt;!&ndash;<i class="glyphicon glyphicon-map-marker"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;{{job.city}}, {{job._source.state}}, {{job.country}}&ndash;&gt;-->
+                      <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="col-lg-4 col-sm-4 col-xs-12">-->
+                    <!--<button class="btn  btn-success btn-xs ">-->
+                        <!--<i class="fa fa-check" ng-if="!searchInfo.close"></i>-->
+
+                    <!--</button>-->
+                    <!--<button class="btn  btn-primary  btn-xs ">-->
+                        <!--<i class="fa fa-star" ng-if="!searchInfo.close"></i>-->
+                    <!--</button>-->
+                    <!--<button class="btn  btn-warning btn-xs ">-->
+                        <!--<i class="fa fa-remove" ng-if="!searchInfo.close"></i>-->
+                    <!--</button>-->
+                <!--</div>-->
+
+            </div>
+             </a>
+        </div>
+
+
+        <!--<button type="button"-->
+                <!--class="right-greater-sign-absolute "-->
+                <!--data-template="./template/homepage/job-description.html"-->
+                <!--data-animation="am-fade-and-slide-right" bs-aside="job">-->
+            <!--<i class="fa fa-chevron-right"></i>-->
+        <!--</button>-->
+    </div>
+
+</div>
+

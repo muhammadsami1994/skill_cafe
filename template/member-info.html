@@ -1,0 +1,105 @@
+<div>
+    <div class="col-lg-1 profile-pic">
+        <img src="{{userInfo.profilePicture}}" alt="person" class=" img-responsive"/>
+    </div>
+    <div class="col-lg-11 no-padding profile">
+        <div>
+            <!-------------------- Member Name --------------->
+            <div class="col-lg-12">
+
+                <span class="name">{{userInfo.name}}</span> - <span>{{userInfo.subName}}</span>
+
+                <div class="btn-group assigned navbar-right" dropdown is-open="status.isopen">
+                    <button type="button" class="btn dropdown-toggle " ng-disabled="disabled">
+                        <i class="table-bordered fa fa-caret-down navbar-right down-arrow"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="title"><a href="#"><i class="fa fa-star"></i>Starred</a></li>
+                        <li class="title"><a href="#"><i class="fa fa-check"></i>Assign</a></li>
+                        <li class="title"><a href="#"><i class="fa fa-check-square-o"></i>Selected</a></li>
+                        <li class="title"><a href="#"><i class="fa fa-times-circle"></i>Rejected</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!------------------ Member Name -------------->
+
+            <!--------------Skills---------------->
+            <div class="col-lg-11 skills-box">
+
+                <div class="col-lg-12 dot-point item">
+                    <span class="col-lg-6 no-padding ">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span class="item-text">{{userInfo.skill.role.description}}</span>
+                    </span>
+                    <span class="col-lg-6" ng-if="userInfo.skill.role.status">
+                        <i class="fa fa-check"></i>
+                        <span class="item-text">{{userInfo.skill.role.status}}</span>
+                    </span>
+                </div>
+
+                <div  class="col-lg-12 no-padding dot-point item">
+                    <span class="col-lg-6">
+                        <i class="fa fa-code"></i>
+                        <span class="item-text">{{userInfo.skill.plateform.description}}</span>
+                    </span>
+                    <span class="col-lg-6" ng-if="userInfo.skill.plateform.status">
+                        <i class="fa fa-check"></i>
+                        <span class="item-text">{{userInfo.skill.plateform.status}}</span>
+                    </span>
+                </div>
+
+                <div class="col-lg-12 dot-point item">
+                    <span>
+                        <i class="fa fa-github"></i>
+                        <a class="item-text gray-link" href="http://{{userInfo.socialLinks.github}}">{{userInfo.socialLinks.github}}</a>
+                    </span>
+                </div>
+
+                <div class="col-lg-12 dot-point item">
+                    <span>
+                        <i class="fa fa-twitter"></i>
+                        <a class="item-text gray-link" href="http://{{userInfo.socialLinks.twitter}}">{{userInfo.socialLinks.twitter}}</a>
+                    </span>
+                </div>
+
+                <div class="col-lg-12 dot-point item">
+                    <span>
+                        <i class="fa fa-chain"></i>
+                        <a class="item-text gray-link" href="http://{{userInfo.socialLinks.chain}}">{{userInfo.socialLinks.chain}}</a>
+                    </span>
+                </div>
+
+                <div class="col-lg-12 dot-point item">
+                    <span>
+                        <i class="fa fa-location-arrow"></i>
+                        <span class="item-text ">{{userInfo.socialLinks.location}}</span>
+                    </span>
+                </div>
+
+                <div class="col-lg-12 dot-point item">
+                    <span>
+                        <i class="fa fa-linkedin"></i>
+                        <a class="item-text gray-link" href="http://{{userInfo.socialLinks.linkedin}}">{{userInfo.socialLinks.linkedin}}</a>
+                    </span>
+                </div>
+
+                <div class="col-lg-12 dot-point item">
+                    <span>
+                        <i class="fa fa-envelope"></i>
+                        <a class="item-text gray-link" href="mailto:{{userInfo.socialLinks.email}}">{{userInfo.socialLinks.email}}</a>
+                    </span>
+                </div>
+            </div>
+            <!--Skills-->
+            <button type="button"
+                    class="right-greater-sign"
+                    data-template="./template/aside-slider.html"
+                    data-animation="am-fade-and-slide-right"
+                    bs-aside="userInfo">
+
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

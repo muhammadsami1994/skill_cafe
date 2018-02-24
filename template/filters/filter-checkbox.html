@@ -1,0 +1,15 @@
+<div class="add-field-button filter filter-by-location" off-click="status.isCollapsed = true">
+    <button class=" btn btn-primary" ng-click="status.isCollapsed = !status.isCollapsed">
+        {{status.name}}: <span ng-if="status.selectValue">Yes</span> <span ng-if="!status.selectValue">No</span>
+        <i class="fa fa-times filter-close" ng-click="closeFilter(status)"></i>
+    </button>
+    <div collapse="status.isCollapsed" class="add-field-items col-lg-3">
+        <div class="bg-primary filter-checkbox">
+
+                <input type="radio" ng-model="status.selectValue" ng-value="true"> Yes <br/>
+                <input type="radio" ng-model="status.selectValue" ng-value="false"> No <br/>
+
+        </div>
+    </div>
+</div>
+

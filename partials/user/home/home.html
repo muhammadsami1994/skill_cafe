@@ -1,0 +1,172 @@
+<div
+    class="home-page"
+    ng-class="{'fix-nav-enable':fixedSearchBar}">
+    <div class="main-container container-fluid no-padding home-page-bg home-page-background home-page-background-md-sm home-page-background-md-sm-1024"
+        ng-class="{'fixed-bar':fixedSearchBar}"
+        >
+        <!-- ---------------------------Top-Nav Header-------------------------- -->
+        <div ng-include src=" '/partials/user/home/navbar.html' "
+            ng-class="{'solid-bg':enableScrollClass}"
+        ></div>
+        <!-- --------------------Header Filter------------------- -->
+        
+        <div class="home-header">
+            <div class="row ">
+                <h1 class="page-title has-subtitle text-white black-shadow" >Research <span class="special">your next job</span>
+                </h1>
+                <p>
+                    Find out what skills and experience will get you your next great job.
+                </p>
+                <p>
+                    <!--<b>How it Works</b>-->
+                </p>
+            </div>
+        </div>
+        <div class="fixed-search-bar">
+            <div class="
+                theme-light-blue
+                padding-top-40
+                padding-bottom-35
+                ">
+                <!-- Search Bar Things -->
+                <div
+                    class="
+                    col-lg-12
+                    col-md-11
+                    col-xs-12
+                    no-padding">
+                    
+                    <!-- 
+                        Filter View
+                        1: Normal Filter
+                        2: Compare Filter View
+                    -->
+                    <ng-include src="filterView"></ng-include>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <!--  //////////////////////////////////////////////// -->
+    <!-- /////////// Search Results,Maps,Etc///////////// -->
+    <!--//////////////////////////////////////////////// -->
+    <div
+        class="row home-search-results"
+        ng-class="homeViewPosition"
+        >
+        <!--{{homeSearchView}}
+        {{templateView.howItWork}}-->
+        <!--ng-class="{'col-lg-9 col-lg-offset-3': homeSearchView != templateView.howItWork}"-->
+        <div
+            class="
+            no-padding"
+            >
+            <ng-include
+            class="col-lg-12 no-padding"
+            src="homeSearchView">
+            </ng-include>
+        </div>
+    </div>
+    <!--  //////////////////////////////////////////////// -->
+    <!-- ///////////////// Search Results//////////////// -->
+    <!--//////////////////////////////////////////////// -->
+    
+</div>
+<!--   ///////////////////Footer ///////////////// -->
+<!--  ///////////////////Footer ///////////////// -->
+<!-- ///////////////////Footer ///////////////// -->
+<div class="row home-footer hidden-sm hidden-xs"
+        ng-class="{'fix-footer-enable':fixedSearchBar}"
+    >
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <a
+            class="
+            col-lg-6 col-md-6 col-sm-12 col-xs-12
+            col-lg-offset-5 col-md-offset-5 col-sm-offset-5"
+            ui-sref="aboutus"
+            title="About SkillCafe">
+            About Us
+        </a>
+        <a
+            class="
+            col-lg-6 col-md-6 col-sm-12 col-xs-12
+            col-lg-offset-5 col-md-offset-5 col-sm-offset-5"
+            ui-sref="contactus"
+            title="Contact us">
+            Contact Us
+        </a>
+        <a class="
+            col-lg-6 col-md-6 col-sm-12 col-xs-12
+        col-lg-offset-5 col-md-offset-5 col-sm-offset-5" href="">Feedback</a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 text-center padding-right-0">
+        <ul class="no-padding col-lg-12 margin-top-10 margin-bottom-0">
+            <li class="bg-transparent inline-block">
+                <a
+                    class="col-lg-3 padding-left-10 padding-right-10"
+                    href="https://www.facebook.com/pages/SkillCafe/1427886697464564"
+                    title="SkillCafe on facebook"
+                    target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li
+                class="bg-transparent inline-block">
+                <a
+                    class="col-lg-3 padding-left-10 padding-right-10"
+                    href="https://twitter.com/SkillCafe7"
+                    title="SkillCafe on twitter"
+                    target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+            <li
+                class=" bg-transparent inline-block">
+                <a
+                    class="col-lg-3 padding-left-10 padding-right-10"
+                    href="https://plus.google.com/103767934619147067562/about"
+                    title="SkillCafe on G+"
+                    target="_blank">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+            <li
+                class=" bg-transparent inline-block">
+                <a
+                    class="col-lg-3 padding-left-10 padding-right-10"
+                    href="https://www.linkedin.com/company/skillcafe"
+                    title="SkillCafe on LinkedIn"
+                    target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+        <p>© SkillCafe 2015 All Rights Reserved</p>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <a class="col-lg-6 col-md-6 col-sm-12 col-xs-12
+            col-lg-offset-5 col-md-offset-3 col-sm-offset-3 col-xs-offset-2"
+            ui-sref="jobindex"
+            title="job index">
+            Job Index
+        </a>
+        <a class="col-lg-6 col-md-6 col-sm-12 col-xs-12
+            col-lg-offset-5 col-md-offset-3 col-sm-offset-3 col-xs-offset-2"
+            ui-sref="privacy"
+            title="privacy policy">
+            Privacy Policy
+        </a>
+        <a
+            class="col-lg-6 col-md-6 col-sm-12 col-xs-12
+            col-lg-offset-5 col-md-offset-3 col-sm-offset-3 col-xs-offset-2"
+            ui-sref="terms"
+            title="terms of use">
+            Terms of Use
+        </a>
+    </div>
+</div>
+<!--   ///////////////////Footer ///////////////// -->
+<!--  ///////////////////Footer ///////////////// -->
+<!-- ///////////////////Footer ///////////////// -->

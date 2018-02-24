@@ -1,0 +1,15 @@
+<div class="fixed-side-list col-lg-12">
+
+    <ul class="list-group ul-left-scroll scroll-1" >
+        <li ng-if="stateMaintainIndex>0" class="side-panel-back-button list-group-item" ng-click="goParentState()">
+            <i class="fa fa-chevron-left"></i> BACK
+        </li>
+        <li class="list-group-item" ng-repeat="link in linksArray" ng-click="goForChildState($index)">
+            <div ng-if="link.children">
+                {{link.name}}
+                <i class="fa fa-chevron-right text-muted"></i>
+            </div>
+            <a href="{{link.url}}" ng-if="!link.children">{{link.name}}</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,90 @@
+<div class="row map-portion" style="margin-top:0" ng-controller="analyticsHotSkillsController">
+    <div class="row light-slogan  ">
+        <div class="container-fluid">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="list-unstyled">
+                    <li><h2 class="text-center">Thousands of Jobs, But you need only one!</h2></li>
+                    <li><h2 class="text-center">
+                        &nbsp;&nbsp;<span class="special">Stop </span>Searching, Start Analyzing.
+                    </h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding trending-skills " style="margin-top:0">
+        <!----------------------------Left Map----------------------->
+
+        <!----------------------------Right Hints----------------------->
+        <div class="col-lg-12 text-center no-padding">
+            <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 home-left-search trending">-->
+                <!--<h2 class="visible-lg-inline-block visible-md-inline-block visible-sm-inline-block visible-xs-inline-block no-margin page-title">Trending</h2>-->
+            <!--</div>-->
+            <!--<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 home-left-search trending">-->
+                <!--<input class="" type="text" class="bigtext" value="Gainesville, FL" placeholder="City/State or your zipcode"/>-->
+            <!--</div>-->
+            <!--<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 home-left-search trending">-->
+                 <!--<input class="" type="text" class="bigtext" value="Software Engineer" placeholder="City/State or your zipcode"/>-->
+            <!--</div>-->
+
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center filter-button">
+                    <!--<button class="btn btn-orange"><b>Location </b>Gainsvilla USA</button>
+                    <button class="btn btn-orange"><b>Job Title </b>Web Developer</button>
+                    <button class="btn btn-orange"><b>Skill </b>HTML</button>
+                    <button class="btn btn-orange"><b>Add Skill </b>Any</button>-->
+                <span ng-repeat="customFilter in data.analyticsFilter.list">
+                    <filter-location class="orange-filter" info='customFilter'></filter-location>
+                </span>
+                    <div class="add-field-button  ">
+                        <button class="btn btn-default btn-success " type="button" style="min-width: 45px" ng-click="refreshHotSkills()">
+                            Go
+                        </button>
+                    </div>
+            </div>
+
+            <!-----------------------TABS----------------------------->
+            <div class="col-lg-12">
+                <tabset class="col-lg-10 col-lg-offset-1 text-left horizontal-tab" justified="true">
+                    <tab heading="Top Skills">
+
+                        <div class="col-lg-12 horizontal-list" ng-show="data.jobs.hotskills.data.length>0">
+                            <ol class="horizontal-list-item">
+                                <li ng-repeat='skill in data.jobs.hotskills.data | limitTo:5  track by $index' >
+                                    {{$index + 1}}<span>{{skill}}</span>
+                                    <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                </li>
+
+
+                            </ol>
+                        </div>
+                        <button class="btn btn-lg col-lg-12 col-md-12 col-sm-12 col-xs-12 tabs-view-more-btn"> View All Jobs in </button>
+                    </tab>
+                    <tab heading="Top Companies">
+                        <div class="col-lg-12 horizontal-list">
+                            <ol class="horizontal-list-item">
+                                <li>1<span>Microsoft</span>
+                                    <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                </li>
+
+                                <li>2<span>Amazon</span>
+                                    <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                </li>
+                                <li>3<span>Sumtotal </span>
+                                    <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                </li>
+                                <li>4<span>IBM</span>
+                                    <span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                </li>
+                                <li>5<span>Octalion Systems</span><span class="float-right"> <i class="fa fa-angle-right"></i></span>
+                                </li>
+                            </ol>
+                        </div>
+                        <button class="btn btn-lg col-lg-12 col-md-12 col-sm-12 col-xs-12 tabs-view-more-btn"> View All Companies</button>
+                    </tab>
+                </tabset>
+            </div>
+        </div>
+    </div>
+</div>

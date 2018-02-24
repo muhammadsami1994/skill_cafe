@@ -1,0 +1,57 @@
+<div class="resume-box animated slide-in-left appear-second col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <i class="title-icon text-success flaticon-open79"></i>
+    <h3 class="pull-right" style="margin-top:35px">Soft Skills &amp; Attributes</h3>
+    <!-- Sinlge skill -->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-30">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input
+                    type="text"
+                    placeholder="Type Your Skill"
+                    class="wizard-input wizard-input-search"
+                    ng-model="data.soft_skill_name"
+                    typeahead="title for title in softSkillAutoComplete()" typeahead-loading="loadingLocations"
+                    >
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <select name="account" class="form-control margin-top-20" ng-model="data.soft_skill_name">
+                <option value="" selected disabled>-- Recommended --</option>
+                <option  value="{{skill.name}}" ng-repeat="skill in data.common_soft_skills track by $index" >{{skill.name}}</option>
+            </select>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <input type="text" placeholder="Where did you use it?"
+                   ng-model="data.soft_skill_description"
+                   class="wizard-input margin-bottom-10 margin-top-10"
+                   ng-click="addSoftSkill(data.soft_skill_name,data.soft_skill_description, data.soft_skills);"
+                    />
+        </div>
+
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <button class="btn btn-success btn-addon btn-sm margin-top-20"
+                    ng-click="addSoftSkill(data.soft_skill_name,data.soft_skill_description, data.soft_skills);data.soft_skill_name='';data.soft_skill_description=''"
+                    >
+                <i class="fa fa-plus"></i>Add Soft Skill
+            </button>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 skill-list" ui-sortable="sortableOptions" ng-model="data.soft_skills">
+        <div class="skill col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-repeat="skill in data.soft_skills track by $index">
+            <span class="skill-name inline">{{skill.name}}</span>
+
+            <i class="fa fa-trash-o float-right" ng-click="deleteSkill($index, data.soft_skills, 'skills')"></i>
+            <span class="label bg-primary inline pull-right margin-right-5">{{getSkillLabel(skill)}}</span>
+
+            <div class="skill-bar sb-primary"  ng-class="getSkillClass(skill)">
+                <div class="skill-strength-off" ng-click="setStrength(1, skill)" ng-class="{'skill-strength-on':skill.strength >= 1}"></div>
+                <div class="skill-strength-off" ng-click="setStrength(2, skill)" ng-class="{'skill-strength-on':skill.strength >= 2}"></div>
+                <div class="skill-strength-off" ng-click="setStrength(3, skill)" ng-class="{'skill-strength-on':skill.strength >= 3}"></div>
+                <div class="skill-strength-off" ng-click="setStrength(4, skill)" ng-class="{'skill-strength-on':skill.strength >= 4}"></div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

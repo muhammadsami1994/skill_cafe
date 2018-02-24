@@ -1,0 +1,14 @@
+<!-- hbox layout -->
+<div class="app-content-full">
+    <div class="hbox hbox-auto-xs m-n" >
+
+        <!-- /column -->
+        <div class="col" ui-view>
+                <!-- When user first login (create account)-->
+                <div ng-include src="'/partials/user/panel-components/dashboard/firstLogin.html'"></div>
+                <!-- you can put whatever you want inside ui-view and that becomes the default view-->
+
+        </div>
+    </div>
+</div>
+<!-- /hbox layout -->

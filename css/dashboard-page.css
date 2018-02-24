@@ -1,0 +1,17 @@
+.invite-team{
+    margin-top: 8%;
+}
+.email-button{
+    background-color:#2096da !important;
+    color: #ffffff;
+}
+.recently-viewed{
+    margin-top: 8%;
+}
+.recently-viewed div{
+    margin-bottom: 2%;
+}
+.dashboard-right h2{
+    margin-bottom: 5%;
+    text-transform: none;
+}

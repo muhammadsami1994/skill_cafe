@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <div class="panel-heading font-bold"><h1 class="visible-lg-inline-block">Top Career Choices</h1></div>
+
+        <!--<input type="text" ng-model="data.careerFilter.list[0]" class="form-control input-lg" placeholder="Type Any Job Title">-->
+              <!--<span class="input-group-btn">-->
+                <!--<button class="btn btn-lg btn-orange" type="button" ng-click="refreshCareerSteps()"><i class="fa fa-search"></i></button>-->
+              <!--</span>-->
+    <div class="panel-body">
+        <div class="row">
+
+            <span id="filter-box">
+                <!--All filters HTML here-->
+                <span ng-repeat="customFilter in data.homePageFilter.list" ng-if="$index==1">
+                    <filter-location class="orange-filter wizard-input" info='customFilter' is-collapsed="customFilter.isCollapsed" ng-if="customFilter.active"></filter-location>
+                </span>
+                <div class="add-field-button">
+                    <button class="btn  btn-success " type="button" style="min-width: 45px"  ng-if="!enableGoButton">
+                        Go
+                    </button>
+                    <button class="btn  btn-success " type="button" style="min-width: 45px" ng-click="refreshCareerSteps()" ng-if="enableGoButton">
+                        Go
+                    </button>
+                </div>
+                <!--All filters HTML here-->
+            </span>
+
+            <div class="col-md-6">
+                <div class="list-group list-group-lg list-group-sp" ng-show="data.jobs.careersteps.data.length>0">
+                    <li class="list-group-item clearfix" ng-repeat='career in data.jobs.careersteps.data track by $index'>
+                        <a href="" class="thumb-sm avatar m-r">
+                            <div class="round-circle">{{$index + 1}}</div>
+                            <i class="on b-white right"></i>
+                        </a>
+                        <span class="pull-right label bg-primary inline m-t-sm">{{career[1]}}</span>
+                        <a href="">{{career[0]}}</a>
+                    </li>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<div
+    class="col-md-12 col-xs-6 col-sm-6
+    col-md-offset-1"
+    ng-if="vm.queryResults.topSkills.length>0">
+    <div
+        class="
+        margin-top-35">
+        <h2>Top 5 Skills</h2>
+        <!--{{data.homePageFilter}}-->
+        <ul class="top-list list-unstyled no-padding">
+            <li
+                ng-repeat="topSkill in vm.queryResults.topSkills|limitTo:5"
+                >
+                <p
+                    ng-class="{'active-top-skill':topSkill.active == true}">
+                    <span
+                    ng-click="vm.letActiveSkill(topSkill)">{{topSkill.name}}</span>
+                    <i
+                    ng-show="topSkill.active == true"
+                    class="glyphicon glyphicon-remove font-size-smaller"
+                    ng-click="vm.letRemoveSkill(topSkill)">
+                    </i>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div
+    class="col-md-12 col-xs-6 col-sm-6
+    col-md-offset-1"
+    ng-if="vm.queryResults.topTitles.length>0">
+    <div class="
+        margin-top-35">
+        <h2>Top 5 Job Title</h2>
+        <ul class="top-list list-unstyled no-padding">
+            <li  ng-repeat="topTitle in vm.queryResults.topTitles">
+                <p
+                    ng-class="{'active-top-skill':vm.activeTitle == topTitle}">
+                    <span
+                    ng-click="vm.setTitle(topTitle)">{{topTitle}}</span>
+                    <i
+                    ng-show="vm.activeTitle == topTitle"
+                    class="glyphicon glyphicon-remove font-size-smaller"
+                    ng-click="vm.setTitle('')">
+                    </i>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div
+    class="col-md-12 col-xs-6 col-sm-6
+    col-md-offset-1"
+    ng-if="vm.queryResults.topCities.length>0">
+    <div class="
+        margin-top-35">
+        <h2>Top 5 Cities</h2>
+        <ul class="top-list list-unstyled no-padding">
+            <li
+                ng-repeat="topCity in vm.queryResults.topCities">
+                <p>
+                    <span>{{topCity.city}}</span>
+                    <i
+                    ng-show="vm.activeTitle == topTitle"
+                    class="glyphicon glyphicon-remove font-size-smaller">
+                    </i>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div
+    class="col-md-12 col-xs-6 col-sm-6
+    col-md-offset-1">
+    <div class="
+        margin-top-35">
+        <h2>Salary estimate</h2>
+        <ul class="top-list list-unstyled no-padding">
+            <li>
+                <p ng-class="{'active-top-skill': vm.activeSalary == '$120,000+'}">
+                    <span ng-click="vm.setSalary('$120,000+')">$120,000 +</span>
+                    <i ng-if="vm.activeSalary == '$120,000+'" class="glyphicon glyphicon-remove font-size-smaller" ng-click="vm.setSalary('')"></i>
+                </p>
+            </li>
+            <li>
+                <p ng-class="{'active-top-skill': vm.activeSalary == '$100,000+'}">
+                    <span ng-click="vm.setSalary('$100,000+')"> $100,000 +</span>
+                <i ng-show="vm.activeSalary == '$100,000+'" class="glyphicon glyphicon-remove font-size-smaller" ng-click="vm.setSalary('')"></i></p>
+            </li>
+            <li>
+                <p ng-class="{'active-top-skill': vm.activeSalary == '$80,000+'}">
+                    <span ng-click="vm.setSalary('$80,000+')">$80,000 +</span>
+                <i ng-show="vm.activeSalary == '$80,000+'" class="glyphicon glyphicon-remove font-size-smaller" ng-click="vm.setSalary('')"></i></p>
+            </li>
+            <li
+                >
+                <p ng-class="{'active-top-skill': vm.activeSalary == '$60,000+'}">
+                    <span ng-click="vm.setSalary('$60,000+')">$60,000 + </span>
+                <i ng-show="vm.activeSalary == '$60,000+'" class="glyphicon glyphicon-remove font-size-smaller" ng-click="vm.setSalary('')"></i></p>
+            </li>
+            <li>
+                <p ng-class="{'active-top-skill': vm.activeSalary == '$40,000+'}">
+                    <span ng-click="vm.setSalary('$40,000+')">$40,000 +</span>
+                <i ng-show="vm.activeSalary == '$40,000+'" class="glyphicon glyphicon-remove font-size-smaller" ng-click="vm.setSalary('')"></i></p>
+            </li>
+        </ul>
+    </div>
+</div>

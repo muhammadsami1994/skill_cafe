@@ -1,0 +1,95 @@
+<div ng-include src=" '/partials/user/panel-components/navbar.html' "></div>
+<!-- hbox layout -->
+<div class="app-content-full">
+    <div class="hbox hbox-auto-xs m-n" >
+        <!-- Left aside column -->
+        <div class="col w-lg lter b-r bg-light hidden-xs" ng-include src="'/partials/user/panel-components/search/aside.html'" >
+            <!-- you can put whatever you want inside ui-view and that becomes the default view-->
+        </div>
+        <!-- /column -->
+        <div class="col search-main-panel" ui-view>
+            <div class="vbox">
+                <div class="row-row">
+                    <div class="cell visible-lg-inline visible-md-inline visible-sm-inline visible-xs-inline">
+                        <div>
+                            <div class="job-seeker-search-right col-lg-12 col-xs-12">
+                                <div class="col-lg-12 col-xs-12">
+                                    <div class="col-lg-10 col-xs-10 col-xs-offset-1">
+                                        <div class="top-bar">
+
+                                            <span id="filter-box">
+                                                <!--All filters HTML here-->
+                                                <span ng-repeat="customFilter in data.homePageFilter.list">
+                                                    <filter-location 
+                                                        class="orange-filter wizard-input" 
+                                                        info='customFilter' 
+                                                        is-collapsed="customFilter.isCollapsed" 
+                                                        ng-if="customFilter.active"
+                                                        next-index="$index"
+                                                        call-go="refreshJobsNearBy">
+                                                    </filter-location>
+                                                </span>
+                                                <filter-skills 
+                                                    class="orange-filter" 
+                                                    info="data.homePageFilter.skill" 
+                                                    is-collapsed="data.isCollapsedSkill" 
+                                                    ng-if="data.homePageFilter.skill.active">                                                    
+                                                </filter-skills>
+                                                
+                                                <div class="add-field-button">
+                                                    <button class="btn  btn-success " type="button" style="min-width: 45px" ng-click="refreshJobsNearBy()">
+                                                        Go
+                                                    </button>
+                                                </div>
+                                                <!--All filters HTML here-->
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-lg-2 col-lg-offset-0 col-xs-4 col-xs-offset-8 ">-->
+                                        <!--<button class="btn btn-primary btn-addon btn-sm margin-top-30" ng-click="saveQuery()" ng-if="enableSaveButton">-->
+                                            <!--<i class="fa fa-download"></i>Save-->
+                                        <!--</button>-->
+                                    <!--</div>-->
+                                </div>
+
+                                <div class="col-lg-12 margin-top-30">
+
+                                    <div class="list-group list-group-lg list-group-sp">
+                                        <!--{{data.jobs.match.results}}-->
+
+                                        <div 
+                                            class="list-group-item clearfix" 
+                                            ng-animate=" 'animate' "
+                                            ng-repeat="job in filteredJobs track by $index">
+                                            <div ng-include src=" '/template/job.html' "></div>
+                                        </div>
+                                        <!--<div class="list-group-item clearfix" ng-animate=" 'animate' " ng-repeat="job in getCityData() track by $index">-->
+                                            <!--<div ng-include src=" '/template/job.html' "></div>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                                <span id=indeed_at><a href="http://www.indeed.com/">jobs</a> by <a
+                                    href="http://www.indeed.com/" title="Job Search"><img
+                                    src="http://www.indeed.com/p/jobsearch.gif" style="border: 0;
+                                    vertical-align: middle;" alt="Indeed job search"></a>
+                                </span>
+                            </div>
+                            <div class="col-lg-12 col-xs-12 margin-top-10">
+                                <pagination  
+                                    total-items="data.jobs.nearby.data.json.results.length"
+                                    ng-model="data.bigCurrentPage" 
+                                    max-size="data.maxSize"
+                                    class="pagination-sm m-t-sm m-b" 
+                                    boundary-links="true">
+                                </pagination>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /hbox layout -->
+

@@ -1,0 +1,136 @@
+<div class="row post-jobs-form col-lg-10 col-lg-offset-1">
+
+    <div class="job-post-form-heading bg-black col-lg-12">
+        <div class="col-lg-2 col-lg-offset-5 margin-top-20">
+            <i class="fa fa-rocket"></i>
+            <h3 class="inline text">
+                Launch a new
+            </h3>
+        </div>
+    </div>
+    <div class="col-lg-8 margin-top-30 no-left-padding">
+        <div class="form-item col-lg-12">
+            <div class="panel-heading b-b b-light col-lg-12 no-padding">
+                <h4 class="col-lg-12 margin-bottom-5 no-padding">Campaign Title: </h4>
+            </div>
+            <input type="text" class="col-lg-12 margin-top-5" ng-model="compaignObject.aboutCompaign.title"/>
+            <h5 class="no-margin">{{30-compaignObject.aboutCompaign.title.length}}</h5>
+        </div>
+
+        <div class="form-item col-lg-12 margin-top-20">
+            <div class="b-b b-light col-lg-12 no-padding">
+                <h4 class="col-lg-12 margin-bottom-5 no-padding">Campaign Message: </h4>
+            </div>
+            <textarea class="col-lg-12 margin-top-5" ng-model="compaignObject.aboutCompaign.message"></textarea>
+            <h5 class="no-margin">{{115-compaignObject.aboutCompaign.message.length}}</h5>
+        </div>
+
+        <div class="form-item col-lg-12 margin-top-20">
+            <div class="b-b b-light col-lg-12 no-padding margin-bottom-10">
+                <h4 class="col-lg-12 margin-bottom-5 no-padding">Message Link: </h4>
+            </div>
+            <h5 class="no-margin">Please use some url shortening service (like <a>goo.gl</a>)</h5>
+            <input type="text" class="col-lg-12 margin-top-5" placeholder="http://" ng-model="compaignObject.aboutCompaign.messageLink"/>
+            <h5 class="no-margin">{{25-compaignObject.aboutCompaign.messageLink.length}}</h5>
+        </div>
+
+        <div class="form-item col-lg-12 margin-top-20">
+            <div class="b-b b-light col-lg-12 no-padding">
+                <h4 class="col-lg-12 margin-bottom-5 no-padding">Compaign Photo</h4>
+            </div>
+            <div class="btn btn-default btn-file margin-top-5">
+                Click here to upload photo<input type="file" class="col-lg-12" accept="image/x-png, image/gif, image/jpeg" ng-model="compaignObject.aboutCompaign.photo"/>
+            </div>
+        </div>
+
+        <div class="form-item col-lg-12 margin-top-20">
+            <div class="b-b b-light col-lg-12 no-padding">
+                <h4 class="col-lg-12 margin-bottom-5 no-padding">Compaign Category: </h4>
+            </div>
+            <select class="col-lg-12 margin-top-5 form-control" ng-model="myCategoy" ng-options="category.name for category in compaignObject.aboutCompaign.category.list">
+                <option value="">---- choose category ----</option>
+            </select>
+        </div>
+
+        <div class="form-item col-lg-12 margin-top-20">
+            <div class="b-b b-light col-lg-12 no-padding">
+                <h4 class="col-lg-12 margin-bottom-5 no-padding">Edit Your Story: </h4>
+            </div>
+            <div class="btn btn-default btn-file margin-top-5">
+                <i class="fa fa-camera-retro col-lg-1 no-padder" style="position: relative">
+                    <i class="fa fa-music" style="position: absolute;top: 40%;"></i>
+                </i>
+                <div class="col-lg-11">Add Media</div>
+                <input type="file" class="col-lg-12" accept="image/x-png, image/gif, image/jpeg" />
+            </div>
+            <div>
+                <div text-angular ta-toolbar="[['bold','italics','underline','quote','ul','ol','justifyLeft','justifyCenter','justifyRight','undo','redo','insertLink'],['html']]" ng-model="compaignObject.aboutCompaign.story"></div>
+            </div>
+        </div>
+
+        <div class="form-item col-lg-12 margin-top-20">
+            <div class="b-b b-light col-lg-12 no-padding margin-bottom-10">
+                <h4 class="col-lg-12 margin-bottom-5 no-padding">Number of supporters you want to reach (maximum number is 500)</h4>
+            </div>
+            <input type="number" class="col-lg-12 margin-top-5" ng-model="compaignObject.aboutCompaign.numberOfSupporters"/>
+        </div>
+    </div>
+    <div class="col-lg-4 panel right-panel">
+        <!--Cover picture and profile Picture-->
+        <div class="job-form-right-panel col-lg-12">
+            <img src="../../../../img/person-avatar.jpg" alt="" class="col-lg-3 col-lg-offset-4 profile-img margin-top-10"/>
+        </div>
+        <!--Bottom text-->
+        <div class="col-lg-12 margin-top-60 text-center">
+            <h3>Title goes here</h3>
+            <h4><small>by</small> Amit Saini</h4>
+        </div>
+        <!--Message box-->
+        <div class="col-lg-12" editable-text="">Your message Goes here</div>
+    </div>
+    <!--About You Portion-->
+    <div class="col-lg-12 no-left-padding">
+        <!--About you Heading-->
+        <div class="job-post-form-heading bg-black col-lg-12 margin-top-30">
+            <div class="col-lg-2 col-lg-offset-5 margin-top-20">
+                <i class="fa fa-rocket"></i>
+                <h3 class="inline text">
+                    About You
+                </h3>
+            </div>
+        </div>
+
+        <!--About You Items-->
+        <div class="form-item col-lg-12 margin-top-20">
+            <div class="b-b b-light col-lg-12 no-padding margin-bottom-10">
+                <h4 class="col-lg-12 margin-bottom-5 no-padding">Who are you?</h4>
+            </div>
+            <textarea class="col-lg-12 margin-top-5" ng-model="compaignObject.aboutUser.whoAreYou"></textarea>
+        </div>
+
+        <div class="col-lg-12 margin-top-20 no-padder">
+            <div class="form-item col-lg-5">
+                <div class="b-b b-light col-lg-12 no-padding margin-bottom-10">
+                    <h4 class="col-lg-12 margin-bottom-5 no-padding">Email:</h4>
+                </div>
+                <input type="email" class="col-lg-12 margin-top-5" ng-model="compaignObject.aboutUser.email"/>
+            </div>
+            <div class="form-item col-lg-5 col-lg-offset-2">
+                <div class="b-b b-light col-lg-12 no-padding margin-bottom-10">
+                    <h4 class="col-lg-12 margin-bottom-5 no-padding">Twitter:</h4>
+                </div>
+                <input type="text" class="col-lg-12 margin-top-5" placeholder="@you" ng-model="compaignObject.aboutUser.twitterName"/>
+            </div>
+        </div>
+        <!--About You Items-->
+    </div>
+    <!--About You Portion-->
+
+    <!--Footer Action Buttons-->
+    <div class="col-lg-12 bg-light-gray text-center margin-top-30 action-buttons">
+        <button class="btn btn-lg btn-success" ng-click="saveJob()">Save</button>
+        <button class="btn btn-lg btn-danger">Publish</button>
+        <a href="#">Cancel</a>
+    </div>
+    <!--Footer Action Buttons-->
+</div>

@@ -1,0 +1,70 @@
+<div
+    class="
+    col-lg-10 col-md-10 col-sm-12 col-xs-12
+    col-lg-offset-1 col-md-offset-1
+    no-padding"
+    ng-controller="defaultFilterController as vm">
+
+    <filter-location
+    class="orange-filter wizard-input display-inherit no-padding"
+    ng-class="{
+    'col-lg-4 col-md-4 col-sm-10 col-lg-offset-0 col-md-offset-0 col-xs-10 col-sm-offset-1 col-xs-offset-1':customFilter.type=='filter-location',
+    'col-lg-3 col-md-3 col-sm-10 col-xs-10 col-lg-offset-0 col-md-offset-0 col-sm-offset-1 col-xs-offset-1':customFilter.type=='filter-title'
+    }"
+    info='customFilter'
+    is-collapsed="customFilter.isCollapsed"
+    next-index="$index"
+    call-go="refreshHotSkills"
+    ng-repeat="customFilter in vm.filters.list">
+    </filter-location>
+    
+    <filter-skills
+    class="
+    orange-filter
+    inline-block
+    no-padding
+    col-lg-3 col-md-3 col-sm-10 col-xs-10
+    col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-1"
+    info="vm.filters.skill"
+    is-collapsed="true">
+    </filter-skills>
+    
+    <button
+    class="btn search-btn
+    col-lg-1 col-md-1 col-sm-10 col-xs-10 
+    col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-1"
+    type="button"
+    ng-click="vm.searchJob()">
+    Search
+    </button>
+    <!-- Selected Skills -->
+    <!-- Add Filter Icons -->
+    <i
+    class="
+    col-lg-2 col-sm-12 col-xs-10 
+    col-lg-offset-0 col-md-offset-0 col-xs-offset-1 
+    add-compair-icon fa fa-plus-square bottom-minus-5
+    hidden-sm hidden-xs"
+    ng-click="initilizeComparision()">
+    <span>Compare Locations</span>
+    </i>
+    <!-- First Skill list drop down -->
+    <div
+        class="
+        col-lg-3 col-md-3 
+        col-lg-offset-5 col-md-offset-7 
+        hidden-sm hidden-xs no-padding">
+        <ul
+            class="list-unstyled no-padding skill-active-list">
+            <li
+                ng-repeat="skill in vm.filters.skill.callback_results"
+                ng-if="skill.active">
+                <p class="no-margin inline-block">{{skill.name}}</p>
+                <i
+                class="glyphicon glyphicon-remove pull-right margin-right-15"
+                ng-click="vm.filters.skill.callback_results[$index].active=false"></i>
+            </li>
+        </ul>
+    </div>
+    
+</div>

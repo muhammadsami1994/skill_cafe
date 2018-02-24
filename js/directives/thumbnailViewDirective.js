@@ -1,0 +1,36 @@
+dashboard.directive('thumbnailViewTypeA',function(){
+    return{
+        restrict:'E',
+        scope:{
+          candidate:"=candidate"
+        },
+        templateUrl:'../../template/thumbnail.html'
+    };
+});
+dashboard.directive('thumbnailViewTypeB',function(){
+    return{
+        restrict:'E',
+        scope:{
+            candidate:"=candidate"
+        },
+        templateUrl:'../../template/thumbnailB.html'
+    };
+});
+dashboard.directive('listViewTypeA',function(){
+    return{
+        restrict:'E',
+        scope:{
+            candidate:"=candidate"
+        },
+        templateUrl:'../../template/listViewA.html'
+    };
+});
+dashboard.directive('listViewTypeB',function(){
+    return{
+        restrict:'E',
+        scope:{
+            candidate:"=candidate"
+        },
+        templateUrl:'../../template/listViewB.html'
+    };
+});

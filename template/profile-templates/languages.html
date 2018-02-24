@@ -1,0 +1,43 @@
+<div class="resume-box animated slide-in-right appear-second">
+    <i class="title-icon text-primary flaticon-chat25"></i>
+    <h3 class="pull-right" style="margin-top:35px">Languages I know</h3>
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="text" placeholder="Type the Language..." class="wizard-input  wizard-input-search" ng-model="data.language_i_speak"  ng-enter="gettingStarted.addLanguages(language_i_speak)" ng-options="language for language in data.world_languages" bs-typeahead/>
+        </div>
+        <div class="col-lg-6">
+            <select name="account" class="form-control margin-top-20" ng-model="data.language_i_speak">
+                <option value="" selected disabled> -- Recommended --</option>
+                <option  value="{{language.name}}" ng-repeat="language in data.common_languages track by $index" >
+                    {{language.name}}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-12">
+            <button class="btn btn-primary btn-addon btn-sm  margin-top-20"
+                    ng-click="addLanguage(data.language_i_speak, user.languages); data.language_i_speak=''"
+                    >
+                <i class="fa fa-plus"></i>Add Languages
+            </button>
+        </div>
+
+
+        <div class="col-lg-12 skill-list panel">
+            <!-- Single skill -->
+            <div class="skill" ng-repeat="language in user.languages track by $index">
+                <span class="skill-name inline">{{language.name}}</span>
+                <i class="fa fa-trash-o float-right" ng-click="deleteSkill($index,user.languages, 'languages')"></i>
+                <div class="skill-bar sb-primary"  ng-class="getSkillClass(language)">
+                    <div class="skill-strength-off" ng-click="setStrength(1, language)" ng-class="{'skill-strength-on':language.strength >= 1}"></div>
+                    <div class="skill-strength-off" ng-click="setStrength(2, language)" ng-class="{'skill-strength-on':language.strength >= 2}"></div>
+                    <div class="skill-strength-off" ng-click="setStrength(3, language)" ng-class="{'skill-strength-on':language.strength >= 3}"></div>
+                    <div class="skill-strength-off" ng-click="setStrength(4, language)" ng-class="{'skill-strength-on':language.strength >= 4}"></div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Single skill -->
+    </div>
+
+</div>

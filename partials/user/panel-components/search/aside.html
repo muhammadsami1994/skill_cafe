@@ -1,0 +1,27 @@
+<div class="vbox">
+
+    <div class="row-row">
+        <div class="cell scrollable hover">
+            <div class="cell-inner">
+                <div class="" id="nav-docs">
+                    <ul class="nav list-group list-group-lg">
+                        <li class="list-group-item clearfix">
+                             <div class="clear text-sm">Skills in Demand for <span class="special">{{data.homePageFilter.list[1].inputValue}} </span> in <span class="special"> {{data.homePageFilter.list[0].location.name}}</span> <i class="fa fa-arrow-down"> </i></div>
+                        </li>
+
+                        <li class="list-group-item clearfix" ng-repeat='skill in data.jobs.hotskills.data.skills | limitTo:10 track by $index'>
+                            <a ng-click='refreshJobforSkill(skill.name)'>
+                            <span>
+                                <i class="fa fa-star-o text-muted small"> </i> {{skill.name}}
+                            </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Here left Side Panel Directive Use-->
+                <!--
+                <side-nested-nav links-array="getRecruiterSideLinks"></side-nested-nav> -->
+            </div>
+        </div>
+    </div>
+</div>

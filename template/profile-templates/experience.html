@@ -1,0 +1,54 @@
+<div class="resume-box animated slide-in-bottom col-lg-12">
+    <i class="title-icon text-primary flaticon-mouse19"></i>
+    <h3 class="pull-right" style="margin-top:35px">Your Experience</h3>
+    <div class="row">
+        <div class="col-lg-6">
+            <!--<input type="text"  ng-model="user.currentjob" typeahead="title for title in titleAutoComplete()" typeahead-loading="loadingLocations"
+                                       class=" wizard-input  wizard-input-search"
+                                       placeholder="Current/Past Job" ng-blur="save('currentjob')"
+                                       ng-model-options="{ updateOn: 'blur' }"
+                                       ng-keyup="cancel($event)" >-->
+
+            <input type="text"  ng-model="data.newExperience.originaltitle" typeahead="title for title in titleAutoComplete()" typeahead-loading="loadingLocations"
+                   class=" wizard-input  wizard-input-search"
+                   placeholder="Current/Past Job"/>
+        </div>
+        <div class="col-lg-6">
+            <select name="account" class="form-control margin-top-20" ng-model="data.experience_i_have">
+                <option value="" selected disabled> -- Recommended --</option>
+                <option  value="{{hobby}}" ng-repeat="hobby in data.common_hobbies track by $index" >
+                    {{hobby}}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <h4 class="col-lg-4 margin-bottom-20 margin-top-20">Start Date</h4>
+                <input class="col-lg-3" type="date" ng-model="data.newExperience.startdate"/>
+            </div>
+            <div class="col-lg-6">
+                <h4 class="col-lg-4 margin-top-20">End Date</h4>
+                <input class="col-lg-3" type="date" ng-model="data.newExperience.enddate"/>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <button class="btn btn-primary btn-addon btn-sm  margin-top-20"
+                type="button"
+                ng-click="addExperience(data.newExperience); ">
+                <i class="fa fa-plus-circle"> </i> Add Role
+            </button>
+        </div>
+        <div class="col-lg-12 skill-list panel">
+            <!-- List group -->
+                <li class="list-group-item" ng-repeat="experience in user.experience.positions |limitTo: 4 track by $index" >
+                    <strong editable-text="experience.originaltitle" onaftersave="save('experience.positions')">{{experience.originaltitle}}</strong>
+                    <div class="float-right">
+                        <span editable-date="experience.startdate" onaftersave="saveStartDate($index,experience.startdate,true)">{{experience.startdate|date}}</span> -
+                        <span editable-date="experience.enddate" onaftersave="saveStartDate($index,experience.enddate,false)">{{experience.enddate|date}}</span>
+                        <i class="fa fa-trash-o " ng-click="removeArrayData($index,user.experience.positions,'experience.positions')"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

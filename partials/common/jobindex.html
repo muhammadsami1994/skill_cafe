@@ -1,0 +1,18 @@
+<div class="home-page container-fluid ">
+    <div class="filter-header"  id="search-skill">
+        <div class="site-bg-color"></div>
+
+        <div ng-include src=" 'partials/user/home/navbar.html' " class="bg-light-bar"></div>
+
+        <div class="container margin-top-80">
+            <h2 class="c16"><a name="h.7gezi23dh8u"></a><span class="c11 c18"> Jobs for Favourite Job Titles</span></h2>
+        </div>
+
+        <div class="container margin-top-20">
+            <li ng-repeat='title in data.jobindex' >
+                <div><a class="title" ng-click="searchjob(title)"><h4 class="title">{{title}} Jobs</h4></a></div>
+            </li>
+        </div>
+
+    </div>
+</div>

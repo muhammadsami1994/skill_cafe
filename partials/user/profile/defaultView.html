@@ -1,0 +1,213 @@
+<!--Change Color Slider-->
+<div class="col-lg-2 change-default-color-theme">
+    <div class="col-lg-10 color-scheme" ng-class="{'theme-skin-selector':styling.toggle}">
+        <span class="col-lg-12">Choose Skin Color</span>
+        <div class="col-lg-12">
+            <div class="profile-skin-color" ng-style="{'background-color':skin.color}" ng-repeat="skin in skinColors" ng-click="changeActiveColor($index)"></div>
+        </div>
+        <span class="col-lg-12">Edit Profile
+            <a ui-sref="user-panel.profile">
+                <i class="fa fa-pencil-square-o" ></i>
+            </a>
+        </span>
+
+    </div>
+
+    <div class="col-lg-2 skin-toggle-button">
+        <i class="fa fa-cog fa-2x" ng-click="openSkinSelector()"></i>
+    </div>
+</div>
+
+<!--Change Color Slider-->
+<div id="default-profile-view">
+    <div class="default-theme-wrap col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div id="header">
+            <div class="row cv-section col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 no-padding" ng-style="{'border-color':styling.color}">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 no-padding">
+                    <img src="{{user.pic}}" alt="profile-image" class="col-lg-2 col-md-2 col-sm-2 no-padding profile-img"/>
+                    <div class="candidate-intro no-padding col-lg-9 col-md-9">
+                        <h1 class="candidate-name margin-bottom-20">{{user.name}}</h1>
+                        <h3 class="candidate-expertise">{{user.currentjob}}</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+                    <!--Social Links-->
+                    <div class="profile-social-links col-lg-9 col-md-12 col-sm-12 col-xs-9 col-lg-offset-1 col-xs-offset-2">
+                        <a href="#" class="social-icon">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="profile-social-links col-lg-9 col-md-12 col-sm-12 col-xs-9 col-lg-offset-1 col-xs-offset-2">
+                        <p>
+                            <span>Email: </span>
+                            <a>{{user.emailid}}</a>
+                        </p>
+                        <p ng-show="user.extra.mobile || user.extra.phone">
+                            <span>Phone: </span>
+                            {{user.extra.mobile}} {{user.extra.phone}}
+                        </p>
+                        <!--<p>-->
+                        <!--<span>Web: </span>-->
+                        <!--<a href="#">www.johnsmithsite.com</a>-->
+                        <!--</p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 no-padding">
+            <div class="profile-content-item col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-3 no-padding">
+                    <h2>Technical Skills</h2>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11 profile-technical-skills no-padding">
+                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 profile-technical-skills-item no-padding"
+                         ng-repeat="skill in user.skills | limitTo: 4 track by $index">
+                        <div class="pie-chart no-padding">
+                            <div ui-jq="easyPieChart" class="no-padding" ui-options="{
+                                percent: '{{(skill.strength/5)*100}}',
+                                lineWidth: 4,
+                                trackColor: '{{app.color.light}}',
+                                barColor: '{{styling.color}}',
+                                scaleColor: false,
+                                size: 150,
+                                lineCap: 'butt',
+                                animate: 1000
+                            }">
+                                <div>
+                                    <span class="step">
+                                        {{skill.name}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 profile-technical-skills extra-technical-skills">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">And I am also good at</h3>
+                        <ul class="list-unstyled list-inline col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <li class="skills-button" ng-repeat="skill in user.skills.slice(4) track by $index">
+                                {{skill.name}}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-if="user.hobbies">
+                        <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">I Like</h3>
+                        <ul class="list-unstyled list-inline col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <li class="skills-button" ng-repeat="skill in user.hobbies track by $index">
+                                {{skill.name}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-if="user.languages">
+                        <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12">My Languages</h3>
+                        <ul class="list-unstyled list-inline col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <li class="skills-button" ng-repeat="skill in user.languages track by $index">
+                                {{skill.name}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="col-lg-9 profile-technical-skills">
+                <div class="col-lg-9 profile-technical-skills-item" ng-class="{'border-bottom':$index<user.skills.length-1}"
+                     ng-repeat="skill in user.skills | limitTo: 4">
+                    <div class="pie-chart">
+                        <div ui-jq="easyPieChart"  ui-options="{
+                  percent: '{{(skill.strength/5)*100}}',
+                  lineWidth: 4,
+                  trackColor: '{{app.color.light}}',
+                  barColor: '{{styling.color}}',
+                  scaleColor: false,
+                  size: 150,
+                  lineCap: 'butt',
+                  animate: 1000
+                }">
+                            <div>
+                                <span class="step">{{(skill.strength/5)*100}}</span>%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pie-chart-description">
+                        <h3 class="text-uppercase">
+                            <strong>{{skill.name}}</strong>
+                        </h3>
+                        <p class="last">{{skill.description}} Lorem ipsum</p>
+                    </div>
+                </div>
+
+            </div>
+            -->
+            <div class="profile-content-item col-lg-12 col-xs-12 no-padding">
+                <div class="col-lg-3 col-xs-3 no-padding">
+                    <h2>Profesional Profile</h2>
+                </div>
+                <div class="col-lg-9 col-xs-9">
+                    <h4 class="col-lg-12 col-xs-12">{{user.summary}}</h4>
+                </div>
+            </div>
+            <div class="profile-content-item col-lg-12 col-xs-12 no-padding"  ng-show="user.education.values">
+                <div class="col-lg-3 col-xs-3 no-padding">
+                    <h2>Education</h2>
+                </div>
+                <div class="col-lg-9 col-xs-9">
+                    <div class="col-lg-12 col-xs-12" ng-repeat="edu in user.education.values">
+                        <h4>
+                            <strong>{{edu.degree}}</strong>
+                            {{edu.schoolName}}
+                        </h4>
+                        <p>{{edu.fieldOfStudy}}</p>
+                   </div>
+                </div>
+            </div>
+            <div class="profile-content-item col-lg-12 col-xs-12 no-padding" ng-show="user.experience.positions">
+                <div class="col-lg-3 col-xs-3 no-padding">
+                    <h2>Work Experience</h2>
+                </div>
+                <div class="col-lg-9 col-xs-9" >
+                    <div class="col-lg-12 col-xs-12 work-expirence-item" ng-repeat="experience in user.experience.positions |limitTo: 4 track by $index" ng-class="{'border-bottom':$index<user.experience.positions-1}">
+                        <div class="col-lg-8 col-xs-8 no-padding">
+                            <h4>
+                                <strong>{{experience.originaltitle}}</strong>
+                                <!--<strong>{{experience.title}}</strong>-->
+                                <!--<h4>{{experience.originaltitle}}</h4>-->
+                            </h4>
+
+                        </div>
+                        <div class="col-lg-4 col-xs-4 employment-date">
+                            <span ng-if="!experience.iscurrent">{{experience.startdate  | date:'dd MMM yyyy'}} - {{experience.enddate| date:'dd MMM yyyy'}}</span>
+                            <span ng-if="experience.iscurrent">{{experience.startdate | date:'dd MMM yyyy'}} - Present</span>
+                        </div>
+                        <p class="col-lg-12">
+                            {{experience.org}}
+                            <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula, magna et bibendum malesuada, purus augue suscipit dolor, vitae fringilla dui nibh non lectus. Curabitur in pellentesque tortor. Nunc posuere vestibulum augue, quis posuere orci blandit vitae. Suspendisse dignissim elit dui, ac dictum felis interdum nec.-->
+                        </p>
+                        <ul>
+                            <li ng-repeat="project in experience.projects track by $index" ng-style="{'color':styling.color}">
+                                <span >{{project}}</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+
+    </div>
+</div>
+<a href="javascript:window.print()" id="print-my-cv" ng-style="{'background-color':styling.color}">
+    <i class="fa fa-print fa-2x"></i>
+</a>

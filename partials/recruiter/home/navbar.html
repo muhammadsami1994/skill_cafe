@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default navbar-fixed-top site-nav recruiter-site-nav" role="navigation" ng-controller="NavBarController">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    ng-init="navCollapsed = true"
+                    ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand skill-cafe-logo" ui-sref="home">
+                <i style="font-size: 20px;vertical-align: middle" class="fa fa-home"> </i> <img  src="./img/logo-dark.png" alt="Logo"/>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div collapse="navCollapsed" class="collapse navbar-collapse  navbar-responsive-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                <li ><a class="home-nav-right-btn"  ui-sref="recruiter-home">Beta</a></li>
+           </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-class="{ active: isNavActive('login')}" ><a class="home-nav-right-btn home-top-nav-link" ui-sref="recruiter.login">Login</a></li>
+                <li class="dropdown">
+                    <a href="#" class="home-nav-right-btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i><!--<span class="caret"></span>--></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="page">
+                            <a class="li-pages home-top-nav-link" ui-sref="aboutus"  title="About SkillCafe">About Us</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="page">
+                            <a class="li-pages" href="http://blog.SkillCafe.com/" title="SkillCafe Blog" target="_blank">Blog</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

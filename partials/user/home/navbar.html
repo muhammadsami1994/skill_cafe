@@ -1,0 +1,108 @@
+<nav
+    class="navBaar background-image-none navbar navbar-default navbar-fixed-top site-nav" role="navigation" ng-controller="NavBarController"
+    >
+    <!--ng-class="{'changeBG':testing}"-->
+    <div class="container-fluid col-lg-12">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header padding-top-0dot5percent">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            ng-init="navCollapsed = true"
+            ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand skill-cafe-logo" href="#">
+                <img  src="./img/logo-dark.png" alt="Logo"/>
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div collapse="navCollapsed" class="collapse navbar-collapse navbar-responsive-collapse" id="bs-example-navbar-collapse-1">
+            <!--<ul class="nav navbar-nav">-->
+            <!--<li ><a class="home-nav-right-btn"  ui-sref="home">Beta</a></li>-->
+            <!--</ul>-->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li><a class="home-nav-right-btn home-top-nav-link" ui-sref="recruiter-home">For Recruiters</a></li> -->
+                <!--<li  ><a class="home-nav-right-btn home-top-nav-link" ui-sref="user.postJobs">Post Jobs</a></li>-->
+                <!--<li  ng-class="{ active: isNavActive('login')}"  ng-show="!user.isLoggedIn"><a class="home-nav-right-btn home-top-nav-link" ui-sref="user.login">Login</a></li>-->
+                <li class="dropdown" ng-show="user.isLoggedIn">
+                    <a href class="dropdown-toggle clear" data-toggle="dropdown">
+                        <span class="pull-left thumb-sm avatar m-t-n-sm m-b-n-sm m-l-sm">
+                            <img ng-src="{{user.pic}}" alt="...">
+                            <i class="on b-white right"></i>
+                        </span>
+                        <span class="hidden-sm hidden-md">{{user.name}}</span> <b class="caret"></b>
+                    </a>
+                    <!-- dropdown -->
+                    <ul class="dropdown-menu animated fadeInRight w">
+                        <!--<li>-->
+                        <!--<a ui-sref="user-panel.getting-started">Getting Started-->
+                        <!--<i class="fa fa-check pull-right text-muted"></i>-->
+                        <!--</a>-->
+                        <!--</li>-->
+                        <li>
+                            <a ui-sref="user-panel.analytics">Analytics
+                                <i class="fa fa-bar-chart pull-right text-muted"></i>
+                            </a>
+                        </li>
+                        <!--<li>-->
+                        <!--<a ui-sref="user-panel.dashboard">Dashboard-->
+                        <!--<i class="fa fa-desktop pull-right text-muted"></i>-->
+                        <!--</a>-->
+                        <!--</li>-->
+                        <li>
+                            <a ui-sref="user-panel.search">Search
+                                <i class="fa fa-search pull-right text-muted"></i>
+                            </a>
+                        </li>
+                        <!--<li>-->
+                        <!--<a ui-sref="user-panel.profile-view">Profile-->
+                        <!--<span class="badge bg-danger pull-right">70%</span>-->
+                        <!--</a>-->
+                        <!--</li>-->
+                        <li>
+                            <a href="http://skillcafe.userecho.com/" target="_blank">
+                                <span class="label bg-green pull-right">new</span>
+                                Feedback
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a ui-sref="user.logout">Logout
+                                <i class="fa fa-lock pull-right text-muted"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- / dropdown -->
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="home-nav-right-btn dropdown-toggle" data-toggle="dropdown" style="float: right"><i class="fa fa-bars"></i><!--<span class="caret"></span>--></a>
+                    <ul class="dropdown-menu animated fadeInRight w" style="position: relative">
+                        <li>
+                            <a class="li-pages home-top-nav-link" ui-sref="aboutus"  title="About SkillCafe">About Us
+                                <i class="fa fa-group pull-right text-muted"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="li-pages home-top-nav-link" ui-sref="contactus"  title="About SkillCafe">Contact Us
+                                <i class="fa fa-envelope pull-right text-muted"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="li-pages home-top-nav-link" ui-sref="privacy"  title="About SkillCafe">Privacy
+                                <i class="fa fa-key pull-right text-muted"></i>
+                            </a>
+                        </li>
+                        <!--
+                        <li >
+                            <a class="li-pages" href="http://blog.SkillCafe.com/" title="SkillCafe Blog" target="_blank">
+                                Blog
+                            </a>
+                        </li>-->
+                    </ul>
+                </li>
+            </ul>
+            </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
